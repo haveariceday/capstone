@@ -2,79 +2,99 @@
   "number": 1,
   "room_name":"Lodging/hotel room",
   "question": ,
-  "main_key": ,
+  "answer_key": ,
   "hint_comment":"",
-  "objects": []
+  "places": [
+    "safe",
+    "tv",
+    "desk"
+  ]
 },
 {
   "number": 2,
   "room_name":"theatre",
   "question": ,
-  "main_key": ,
+  "answer_key": ,
   "hint_comment":"",
-  "objects": []
+  "places": [
+    "stage",
+    "audience seats",
+    "entrance"
+]
 },
 {
   "number": 3,
   "room_name":"nightclub",
   "question": ,
-  "main_key": ,
+  "answer_key": ,
   "hint_comment":"",
-  "objects": []
+  "places": [
+    "bar",
+    "dance floor",
+    "DJ booth"
+]
 },
 {
   "number": 4,
   "room_name":"casino",
   "question": ,
-  "main_key": ,
+  "answer_key": ,
   "hint_comment":"",
-  "objects": []
+  "objects": [
+    "slot machine",
+    "roulettle",
+    "blackjack"
+]
 },
 {
   "number": 5,
   "room_name":"buffet",
   "question": ,
-  "main_key": ,
+  "answer_key": ,
   "hint_comment":"",
-  "objects": []
+  "places": [
+    "buffet",
+    "seat",
+    "reception"
+]
 },
 {
   "number": 6,
   "room_name":"crews break room",
   "question": ,
-  "main_key": ,
+  "answer_key": ,
   "hint_comment":"",
-  "objects": []
+  "places": []
 },
 {
   "number": 7,
   "room_name":"Bridge/steering room",
   "question": ,
-  "main_key": ,
+  "answer_key": ,
   "hint_comment":"",
-  "objects": []
+  "places": []
 },
 {
   "number": 8,
   "room_name":"kitchen",
   "question": ,
-  "main_key": ,
+  "answer_key": ,
   "hint_comment":"",
-  "objects": []
+  "places": []
 },
 {
   "number": 9,
   "room_name":"backstage",
   "question": ,
-  "main_key": ,
+  "answer_key": ,
   "hint_comment":"",
-  "objects": []
+  "places": []
 },
 {
   "number": 10,
   "room_name":"engine room",
   "question": ,
-  "main_key": ,
+  "answer_key": ,
   "hint_comment":"",
-  "objects": []
+  "places": []
 }
