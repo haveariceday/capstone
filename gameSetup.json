@@ -64,7 +64,11 @@
   "question": ,
   "answer_key": ,
   "hint_comment":"",
-  "places": []
+  "places": [
+    "locker",
+    "bench",
+    "bank beds"
+]
 },
 {
   "number": 7,
@@ -72,7 +76,11 @@
   "question": ,
   "answer_key": ,
   "hint_comment":"",
-  "places": []
+  "places": [
+    "driving seat",
+    "monitoring area",
+    "map"
+]
 },
 {
   "number": 8,
@@ -80,7 +88,12 @@
   "question": ,
   "answer_key": ,
   "hint_comment":"",
-  "places": []
+  "places": [
+    "fire area",
+    "washing area",
+    "dumpster/trash cans"
+]
+
 },
 {
   "number": 9,
@@ -88,7 +101,11 @@
   "question": ,
   "answer_key": ,
   "hint_comment":"",
-  "places": []
+  "places": [
+    "changing area",
+    "makeup area",
+    "closet"
+]
 },
 {
   "number": 10,
@@ -96,5 +113,9 @@
   "question": ,
   "answer_key": ,
   "hint_comment":"",
-  "places": []
+  "places": [
+    "water flow controller",
+    "air conditioning area",
+    "engine meter"
+]
 }
