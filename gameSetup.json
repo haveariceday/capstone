@@ -1,4 +1,12 @@
 {
+ "number": 0,
+  "verbs": [
+    "look", "jump", "move",  "press","input", "insert","read","call","inspect"
+  ]
+},
+
+
+{
   "number": 1,
   "room_name":"Lodging/hotel room",
   "question": ,
@@ -77,8 +85,8 @@
   "answer_key": ,
   "hint_comment":"",
   "places": [
-    "driving seat",
-    "monitoring area",
+    "steering wheel",
+    "navigation controls",
     "map"
 ]
 },
@@ -89,9 +97,10 @@
   "answer_key": ,
   "hint_comment":"",
   "places": [
-    "fire area",
-    "washing area",
-    "dumpster/trash cans"
+    "griddle",
+    "dishwasher",
+    "dumpster/trash cans",
+    "refrigerator"
 ]
 
 },
@@ -102,9 +111,9 @@
   "answer_key": ,
   "hint_comment":"",
   "places": [
-    "changing area",
-    "makeup area",
-    "closet"
+    "actor's locker",
+    "makeup seat",
+    "clothing rack"
 ]
 },
 {
