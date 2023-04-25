@@ -13,3 +13,4 @@ This is a single user Escape Room themed text-based adventure game. To play this
 3. Type "Exit" to end the game.
 4. Type "Save" to save the current status of the game.
 5. The game will be shut down when the time is up.
+6. To manuever, the user can move in four different directions (left-right-forward-backward).
