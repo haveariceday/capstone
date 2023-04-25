@@ -43,7 +43,10 @@
   "number": 3,
   "room_name":"nightclub",
   "scenario": "There was a fun party going on in the club tonight, until everyone ran to the exit.",
-  "answer_key": ,
+        "There seems to be a paper near the DJ booth that tonight's DJ dropped.",
+        "The paper shows the name of the drink and some numbers that might help you get out of the room!",
+        "What would you like to do?",
+  "answer_key": ["Move to DJ booth", "Inspect paper", "Move to the bar", "Inspect bottles", "Move to the dance floor"],
   "hint_comment":"",
   "places": [
     "bar",
