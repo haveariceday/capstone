@@ -1,11 +1,17 @@
 {
  "number": 0,
   "verbs": [
-    "look", "jump", "move",  "press","input", "insert","read","call","inspect"
+    "look",
+    "jump",
+    "move",
+    "press",
+    "input",
+    "insert",
+    "read",
+    "call",
+    "inspect"
   ]
 },
-
-
 {
   "number": 1,
   "room_name":"Lodging/hotel room",
@@ -21,8 +27,11 @@
 {
   "number": 2,
   "room_name":"theatre",
-  "question": ,
-  "answer_key": ,
+  "scenario": "Oh no, after the emergency bell rang, the theater was shut down and you were the only left in theater",
+        "You will have to find ways to evacuate this room before the ship sinks!",
+        "When you look around the theater, there are a stage, audience seats, and the entrance",
+        "Where do you want to inspect?",
+  "answer_key": ["move to the stage","inspect audience seats","look at the entrance"],
   "hint_comment":"",
   "places": [
     "stage",
@@ -33,7 +42,7 @@
 {
   "number": 3,
   "room_name":"nightclub",
-  "question": ,
+  "scenario": "There was a fun party going on in the club tonight, until everyone ran to the exit.",
   "answer_key": ,
   "hint_comment":"",
   "places": [
