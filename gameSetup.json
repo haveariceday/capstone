@@ -69,8 +69,12 @@
 {
   "number": 5,
   "room_name":"buffet",
-  "question": ,
-  "answer_key": ,
+  "scenario": "There was a lot of delicious foods at the Japanese buffet this evening.",
+        "Oopes, you fell asleep at the dinner table and you were the only one left in the room!",
+        "It seems like the waiter left a note for you how to escape the room",
+        "The note says hi, we have to leave. Good luck. Eat till you fall.",
+        "Strange note but okay, what would you like to do?"
+  "answer_key": ["Inspect buffet","Insepect seats","Inspect the reception table"],
   "hint_comment":"",
   "places": [
     "buffet",
