@@ -54,12 +54,12 @@
 {
   "number": 4,
   "room_name":"casino",
-  "question": ,
-  "answer_key": ,
+  "scenario": "Eveerybody was in a rush to the exit, needless to say no chips were cashed out. Places to inspect are the slot machine, roulette, and the blackjack table. you might find a casino employee badge that gets you to the buffet",
+  "answer_key": ["inspect roulette","press keycard"],
   "hint_comment":"",
   "objects": [
     "slot machine",
-    "roulettle",
+    "roulette",
     "blackjack"
 ]
 },
