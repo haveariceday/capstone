@@ -9,12 +9,12 @@
 {
   "number": 1,
   "room_name":"Lodging/hotel room",
-  "question": ,
-  "answer_key": ,
+  "scenario": "Power is off, key card doesn't work as a result. You read the welcome brochure with included emergency\\n information and it tells you there is a manual key in the safe. The safe is locked so you search around and find an id. You input the birthday into the safe and find the key along with... ",
+  "answer_key": ["read welcome brochure","inspect safe","inspect desk", "input birthday",],
   "hint_comment":"",
   "places": [
     "safe",
-    "tv",
+    "welcome brochure",
     "desk"
   ]
 },
