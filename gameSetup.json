@@ -16,7 +16,7 @@
   "number": 1,
   "room_name":"Lodging/hotel room",
   "scenario": "Power is off, key card doesn't work as a result. You read the welcome brochure with included emergency\\n information and it tells you there is a manual key in the safe. The safe is locked so you search around and find an id. You input the birthday into the safe and find the key along with... ",
-  "answer_key": ["read welcome brochure","inspect safe","inspect desk", "input birthday",],
+  "answer_key": ["read welcome brochure","inspect safe","inspect desk", "input birthday"],
   "hint_comment":"",
   "places": [
     "safe",
@@ -75,7 +75,8 @@
         "The note says hi, we have to leave. Good luck. Eat till you fall.",
         "Strange note but okay, what would you like to do?"
   "answer_key": ["Inspect buffet","Insepect seats","Inspect the reception table"],
-  "hint_comment":"",
+  "hint_comment":"Japanese saying Eat till you fall is used in Osaka",
+  "answer": "Takoyaki",
   "places": [
     "buffet",
     "seat",
@@ -85,8 +86,12 @@
 {
   "number": 6,
   "room_name":"crews break room",
-  "question": ,
-  "answer_key": ,
+  "question": "You are in the crews break room. They are the first ones to notice that ship was sinking.",
+        "There are outfits thrown everywhere on the bench and on bank beds.",
+        "There are hats, gloves, scarves, slacks, aprons, and vests laying around.",
+        "When you look around, there are lockers and some of them are open. There might be some tools to escape the room",
+        "What would you like to do?"
+  "answer_key": ["Inspect lockers", "Move bank beds", "Look on the bench"],
   "hint_comment":"",
   "places": [
     "locker",
