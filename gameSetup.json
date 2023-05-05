@@ -91,7 +91,7 @@
         "There are hats, gloves, scarves, slacks, aprons, and vests laying around.",
         "When you look around, there are lockers and some of them are open. There might be some tools to escape the room",
         "What would you like to do?"
-  "answer_key": ["Inspect lockers", "Move bank beds", "Look on the bench"],
+  "answer_key": ["Inspect lockers", "Move bank beds", "Look at the bench"],
   "hint_comment":"",
   "places": [
     "locker",
@@ -102,8 +102,11 @@
 {
   "number": 7,
   "room_name":"Bridge/steering room",
-  "question": ,
-  "answer_key": ,
+  "question": "You are in the steering room. Unfortunately, the ship is broken into a half and the water is coming into the room",
+        "We don't have much time left until this room is under the water. But there has to be a way to escape this room!",
+        "Let's look around. In this room, there is a steering wheel, navigation controls, and a map",
+        "The map looks odd... There is a piece missing from the map... What would you like to do?",
+  "answer_key": ["Inspect the map", "Munouver the steering wheel", "Look at the navigation controls"],
   "hint_comment":"",
   "places": [
     "steering wheel",
@@ -114,8 +117,11 @@
 {
   "number": 8,
   "room_name":"kitchen",
-  "question": ,
-  "answer_key": ,
+  "question": "You are in the kitchen. It is one of the biggest rooms on this ship. This is the kitchen where the magic happens.",
+        "well... not really anymore! It is emptiest kitchen you have ever seen. Let's take a tour.",
+        "The kitchen is divided into three parts, cooking, cleaning, and storage area.",
+        "Where would you like to take a look at?"
+  "answer_key": ["Cooking area","Cleaning area", "Storage area"],
   "hint_comment":"",
   "places": [
     "griddle",
