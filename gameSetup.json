@@ -117,8 +117,8 @@
 {
   "number": 8,
   "room_name":"kitchen",
-  "question": "You are in the kitchen. It is one of the biggest rooms on this ship. This is the kitchen where the magic happens.",
-        "well... not really anymore! It is emptiest kitchen you have ever seen. Let's take a tour.",
+  "question": "You are in the kitchen. It is one of the biggest rooms on this ship. This is where the magic happens.",
+        "well... not anymore! It is emptiest kitchen you have ever seen. Let's take a tour.",
         "The kitchen is divided into three parts, cooking, cleaning, and storage area.",
         "Where would you like to take a look at?"
   "answer_key": ["Cooking area","Cleaning area", "Storage area"],
@@ -134,20 +134,24 @@
 {
   "number": 9,
   "room_name":"backstage",
-  "question": ,
-  "answer_key": ,
+  "question": "Welcome to the backstage of the theater! This place gets very busy during the show.",
+        "There are locker, makeup vanity, and clothing rack in the backstage. There are many items and it is cluttered.",
+        "What would you like to do?"
+  "answer_key": ["Pull outfit out of the clothing rack", "Inspect makeup vanity", "Inspect locker"],
   "hint_comment":"",
   "places": [
     "actor's locker",
-    "makeup seat",
+    "makeup vanity",
     "clothing rack"
 ]
 },
 {
   "number": 10,
   "room_name":"engine room",
-  "question": ,
-  "answer_key": ,
+  "question": "You made it to the final room, the engine room. In this room, there are water flow controller, air conditioning area, and the engine meter.",
+        "Cords are crushing and they started to spark. You can imagine if the water comes in... you must escape!",
+        "What would like to do?"
+  "answer_key": ["Inspect water flow controller", "Inspect air conditioning area", "Inspect the engine meter"],
   "hint_comment":"",
   "places": [
     "water flow controller",
