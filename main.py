@@ -9,6 +9,56 @@ player = {
 
 # Define game rooms and their descriptions
 rooms = {
+    "lodging": {
+        "description": "",
+        "exits": [],
+        "items": [""]
+    },
+    "theatre": {
+        "description": "",
+        "exits": [],
+        "items": [""]
+    },
+    "nightclub": {
+        "description": "",
+        "exits": [],
+        "items": [""]
+    },
+    "casino": {
+        "description": "",
+        "exits": [],
+        "items": [""]
+    },
+    "buffet": {
+        "description": "",
+        "exits": [],
+        "items": [""]
+    },
+    "crews break room": {
+        "description": "",
+        "exits": [],
+        "items": [""]
+    },
+    "steering room": {
+        "description": "",
+        "exits": [],
+        "items": [""]
+    },
+    "kitchen": {
+        "description": "",
+        "exits": [],
+        "items": [""]
+    },
+    "backstage": {
+        "description": "",
+        "exits": [],
+        "items": [""]
+    },
+    "engine room": {
+        "description": "",
+        "exits": [],
+        "items": [""]
+    }
 
     # "lobby": {
     #     "description": "You are in the lobby of an old mansion.",
