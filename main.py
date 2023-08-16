@@ -4,92 +4,93 @@
 player = {
     "name": "",
     "health": 100,
-    "inventory": []
+    "inventory": [],
+    "current_room": "lobby"
 }
 
 # Define game rooms and their descriptions
 rooms = {
-    "lodging": {
-        "description": "",
-        "exits": [],
-        "items": [""]
-    },
-    "theatre": {
-        "description": "",
-        "exits": [],
-        "items": [""]
-    },
-    "nightclub": {
-        "description": "",
-        "exits": [],
-        "items": [""]
-    },
-    "casino": {
-        "description": "",
-        "exits": [],
-        "items": [""]
-    },
-    "buffet": {
-        "description": "",
-        "exits": [],
-        "items": [""]
-    },
-    "crews break room": {
-        "description": "",
-        "exits": [],
-        "items": [""]
-    },
-    "steering room": {
-        "description": "",
-        "exits": [],
-        "items": [""]
-    },
-    "kitchen": {
-        "description": "",
-        "exits": [],
-        "items": [""]
-    },
-    "backstage": {
-        "description": "",
-        "exits": [],
-        "items": [""]
-    },
-    "engine room": {
-        "description": "",
-        "exits": [],
-        "items": [""]
-    }
-
-    # "lobby": {
-    #     "description": "You are in the lobby of an old mansion.",
-    #     "exits": ["kitchen", "living room", "hallway"],
-    #     "items": ["key"]
+    # "lodging": {
+    #     "description": "",
+    #     "exits": [casino,theatre,buffet],
+    #     "items": [""]
+    # },
+    # "theatre": {
+    #     "description": "",
+    #     "exits": [buffet, casino,backstage,lodging],
+    #     "items": [""]
+    # },
+    # "nightclub": {
+    #     "description": "",
+    #     "exits": [casino],
+    #     "items": [""]
+    # },
+    # "casino": {
+    #     "description": "",
+    #     "exits": [nightclub,theatre,lodging,buffet],
+    #     "items": [""]
+    # },
+    # "buffet": {
+    #     "description": "",
+    #     "exits": [nightclub,theatre,lodging,kitchen],
+    #     "items": [""]
+    # },
+    # "crews break room": {
+    #     "description": "",
+    #     "exits": [kitchen, engine room,backstage],
+    #     "items": [""]
+    # },
+    # "steering room": {
+    #     "description": "",
+    #     "exits": [engine room],
+    #     "items": [""]
     # },
     # "kitchen": {
-    #     "description": "You are in a dusty kitchen with old appliances.",
-    #     "exits": ["lobby"],
-    #     "items": ["knife"]
+    #     "description": "",
+    #     "exits": [buffet, crew break room],
+    #     "items": [""]
     # },
-    # "living room": {
-    #     "description": "You are in a grand living room with antique furniture.",
-    #     "exits": ["lobby", "dining room"],
-    #     "items": ["book"]
+    # "backstage": {
+    #     "description": "",
+    #     "exits": [theatre, crew break room],
+    #     "items": [""]
     # },
-    # "hallway": {
-    #     "description": "You are in a dimly lit hallway with many doors.",
-    #     "exits": ["lobby", "bedroom"],
-    #     "items": []
-    # },
-    # "dining room": {
-    #     "description": "You are in an elegant dining room with a large table.",
-    #     "exits": ["living room"],
-    #     "items": []
-    # },
-    # "bedroom": {
-    #     "description": "You are in a creepy bedroom with a creaky bed.",
-    #     "exits": ["hallway"],
-    #     "items": ["flashlight"]
+    # "engine room": {
+    #     "description": "",
+    #     "exits": [steering room, crew break room],
+    #     "items": [""]
     # }
+
+    "lobby": {
+        "description": "You are in the lobby of an old mansion.",
+        "exits": ["kitchen", "living room", "hallway"],
+        "items": ["key"]
+    },
+    "kitchen": {
+        "description": "You are in a dusty kitchen with old appliances.",
+        "exits": ["lobby"],
+        "items": ["knife"]
+    },
+    "living room": {
+        "description": "You are in a grand living room with antique furniture.",
+        "exits": ["lobby", "dining room"],
+        "items": ["book"]
+    },
+    "hallway": {
+        "description": "You are in a dimly lit hallway with many doors.",
+        "exits": ["lobby", "bedroom"],
+        "items": []
+    },
+    "dining room": {
+        "description": "You are in an elegant dining room with a large table.",
+        "exits": ["living room"],
+        "items": []
+    },
+    "bedroom": {
+        "description": "You are in a creepy bedroom with a creaky bed.",
+        "exits": ["hallway"],
+        "items": ["flashlight"]
+    }
 }
 
 # Define game actions
@@ -106,6 +107,7 @@ def display_status():
     print("Player: " + player["name"])
     print("Health: " + str(player["health"]))
     print("Inventory: " + str(player["inventory"]))
+    print("Current location: " + str(player["current_room"]))
 
 
 # Function to handle player input and perform actions
@@ -179,6 +181,7 @@ def play_game():
     game_running = True
     while game_running:
         command = input("Enter a command: ")
+        print("command print: ", command)
         game_running = handle_input(command)
 
 
