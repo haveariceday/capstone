@@ -1,10 +1,11 @@
 # Escape Room Text Adventure Game
 
+import random
 # Define player attributes
 player = {
     "name": "",
     "oxygen_level": 100,
-    "inventory": [],
+    "inventory": ["air tank"],
     "current_room": "lobby"
 }
 
@@ -166,8 +167,57 @@ def use_item(current_room, item):
     elif item == "flashlight" and current_room == "kitchen":
         print("You have found a hidden clue!")
         # Additional game logic for revealing the clue
+    elif item == "air tank":
+        print("You must unlock this air tank by solving a riddle, if you are succesful, your oxygen will increase by "
+              "5, if you are unsuccesful, your oxygen will decrease by 2")
+        choice = input("Do you wish to solve the riddle?")
+        if choice == "yes":
+            air_tank_riddle()
+        else:
+            pass
     else:
         print("You cannot use the " + item + " here.")
+
+def air_tank_riddle():
+    riddles = {
+        "Riddle 1": {
+            "riddle": "I'm the diver's best friend, a lifeline to breathe,\nIn this underwater world, I help you not to seethe.\nWithout me, you'll gasp, your survival at risk,\nIn a sunken ship's depths, which treasure do I brisk?\nWhat am I?",
+            "answer": "Air tank"
+        },
+        "Riddle 2": {
+            "riddle": "Down in the depths where the ship met its fate,\nI rest on the ocean floor, don't hesitate.\nA canister of air, a lifeline so true,\nIn this watery tomb, I wait for you.\nWhat artifact am I, hidden from sight?",
+            "answer": "Air tank"
+        },
+        "Riddle 3": {
+            "riddle": "Amidst the shipwreck's gloom, a secret I keep,\nWith compressed air inside, I'm not yours to sweep.\nAs you venture through this aquatic abode,\nFind me to ensure your journey's bestowed.\nWhat's my identity, lost beneath the sea?",
+            "answer": "Air tank"
+        },
+        "Riddle 4": {
+            "riddle": "Bubbles rise as you exhale, beneath the waves so deep,\nTo explore this sunken vessel, treasure to reap.\nWith limited breath, you search the ship's core,\nBut find me to replenish and dive once more.\nWhat object do you need, submerged in this scene?",
+            "answer": "Air tank"
+        },
+        "Riddle 5": {
+            "riddle": "A tank of air, my purpose is clear,\nTo explore the depths without any fear.\nIn this submerged ship, your quest begins,\nFor safety and breath, unlock my wins.\nWhat am I, waiting in this underwater space?",
+            "answer": "Air tank"
+        }
+    }
+
+    # Select a random riddle
+    random_riddle_name = random.choice(list(riddles.keys()))
+    selected_riddle = riddles[random_riddle_name]
+
+    # Display the riddle and get player's answer
+    print(selected_riddle["riddle"])
+    user_answer = input("Your answer: ")
+
+    # Check if the answer is correct
+    if user_answer.lower() == selected_riddle["answer"].lower():
+        print("Correct! Your oxygen level increases by 5.")
+        player["oxygen_level"] += 5
+    else:
+        print("Incorrect. Your oxygen level decreases by 2.")
+        player["oxygen_level"] -= 2
+
 
 def display_help():
     print("--- COMMAND OPTIONS---")
