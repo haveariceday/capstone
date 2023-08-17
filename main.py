@@ -3,7 +3,7 @@
 # Define player attributes
 player = {
     "name": "",
-    "health": 100,
+    "oxygen_level": 100,
     "inventory": [],
     "current_room": "lobby"
 }
@@ -105,7 +105,7 @@ actions = {
 # Function to display the player's current status
 def display_status():
     print("Player: " + player["name"])
-    print("Health: " + str(player["health"]))
+    print("Oxygen Level: " + str(player["oxygen_level"]))
     print("Inventory: " + str(player["inventory"]))
     print("Current location: " + str(player["current_room"]))
 
@@ -179,6 +179,7 @@ def display_help():
     print("6. quit")
     print("")
     print("--- MAP ---")
+    print("Current location: " + player["current_room"])
     print("     __________________________________________")
     print("   _/|      _______                           |")
     print(" _/  |  2   +  3  |   4   |   5    |          |")
