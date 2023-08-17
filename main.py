@@ -97,8 +97,8 @@ rooms = {
 actions = {
     "look": "look around",
     "go": "go to",
-    "take": "take item",
-    "use": "use item"
+    "take": "take",
+    "use": "use"
 }
 
 
@@ -169,12 +169,30 @@ def use_item(current_room, item):
     else:
         print("You cannot use the " + item + " here.")
 
+def display_help():
+    print("--- COMMAND OPTIONS---")
+    print("1. go to [location name]")
+    print("2. look")
+    print("3. inspect [item name]")
+    print("4. take [item name]")
+    print("5. use [item name]")
+    print("6. quit")
+    print("")
+    print("--- MAP ---")
+    print("     __________________________________________")
+    print("   _/|      _______                           |")
+    print(" _/  |  2   +  3  |   4   |   5    |          |")
+    print("/  1 |______+_++__|__++___|__++____|          |")
+    print("\_   +      |     |       |        |    10    |")
+    print("  \_ +  6   +  7  +   8   |   9    |          |")
+    print("    \|______+_____+_______|________|__________|")
+    print("1. steering room, 2. buffet, 3. kitchen, 4.theatre, 5. casino, 6.engine room, 7.crew break room, 8. back stage, 9.nightclub, 10. lodging")
 
 # Main game loop
 def play_game():
     print("Welcome to the Escape Room Text Adventure Game!")
     player["name"] = input("Enter your name: ")
-    print("Hello, " + player["name"] + "! Let's begin.")
+    print("Hello, " + player["name"] + "! Let's begin. Type 'help' for details about the game")
     #current_room = player["current_room"]
     display_status()
 
@@ -182,7 +200,10 @@ def play_game():
     while game_running:
         command = input("Enter a command: ")
         print("command print: ", command)
-        game_running = handle_input(command)
+        if command == "help":
+            display_help()
+        else:
+            game_running = handle_input(command)
 
 
 # Start the game
