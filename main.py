@@ -1,6 +1,7 @@
 # Escape Room Text Adventure Game
 
 import random
+
 # Define player attributes
 player = {
     "name": "",
@@ -119,15 +120,15 @@ def handle_input(command):
 
     if command.startswith(actions['go']):
         destination = command.split(actions["go"])[1].strip()
-        move_to_room(player["current_room"],destination)
+        move_to_room(player["current_room"], destination)
     elif command.startswith(actions["look"]):
         look_around(player["current_room"])
     elif command.startswith(actions["take"]):
         item = command.split(actions["take"])[1].strip()
-        take_item(player["current_room"],item)
+        take_item(player["current_room"], item)
     elif command.startswith(actions["use"]):
         item = command.split(actions["use"])[1].strip()
-        use_item(player["current_room"],item)
+        use_item(player["current_room"], item)
     else:
         print("Unknown command.")
     return True
@@ -150,7 +151,7 @@ def look_around(current_room):
 
 
 # Function to take an item and add it to the player's inventory
-def take_item(current_room,item):
+def take_item(current_room, item):
     if item in rooms[current_room]["items"]:
         player["inventory"].append(item)
         rooms[current_room]["items"].remove(item)
@@ -177,6 +178,7 @@ def use_item(current_room, item):
             pass
     else:
         print("You cannot use the " + item + " here.")
+
 
 def air_tank_riddle():
     riddles = {
@@ -219,6 +221,42 @@ def air_tank_riddle():
         player["oxygen_level"] -= 2
 
 
+def scramble_word(current_room):
+    room_word_associations = {
+        "lodging": "Beds",
+        "theatre": "Stage",
+        "nightclub": "Dance",
+        "casino": "Gamble",
+        "buffet": "Food",
+        "crews break room": "Rest",
+        "steering room": "Helm",
+        "kitchen": "Cook",
+        "backstage": "Props",
+        "engine room": "Machinery"
+    }
+
+    if current_room in room_word_associations:
+        original_word = room_word_associations[current_room].replace(" ", "").upper()
+        scrambled_word = list(original_word)
+        random.shuffle(scrambled_word)
+        scrambled = ''.join(scrambled_word)
+
+        print(f"Unscramble the following word associated with the {current_room}:")
+        print(scrambled)
+
+        player_guess = input("Your guess: ")
+
+        if player_guess.upper() == original_word:
+            print(f"Correct! You unscrambled the word for the {current_room}.")
+            return True
+        else:
+            print("Incorrect. Try again.")
+            return False
+    else:
+        print(f"There's no word association available for the {current_room}.")
+        return False
+
+
 def display_help():
     print("--- COMMAND OPTIONS---")
     print("1. go to [location name]")
@@ -237,14 +275,16 @@ def display_help():
     print("\_   +      |     |       |        |    10    |")
     print("  \_ +  6   +  7  +   8   |   9    |          |")
     print("    \|______+_____+_______|________|__________|")
-    print("1. steering room, 2. buffet, 3. kitchen, 4.theatre, 5. casino, 6.engine room, 7.crew break room, 8. back stage, 9.nightclub, 10. lodging")
+    print(
+        "1. steering room, 2. buffet, 3. kitchen, 4.theatre, 5. casino, 6.engine room, 7.crew break room, 8. back stage, 9.nightclub, 10. lodging")
+
 
 # Main game loop
 def play_game():
     print("Welcome to the Escape Room Text Adventure Game!")
     player["name"] = input("Enter your name: ")
     print("Hello, " + player["name"] + "! Let's begin. Type 'help' for details about the game")
-    #current_room = player["current_room"]
+    # current_room = player["current_room"]
     display_status()
 
     game_running = True
