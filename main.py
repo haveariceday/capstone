@@ -181,24 +181,24 @@ def use_item(current_room, item):
 def air_tank_riddle():
     riddles = {
         "Riddle 1": {
-            "riddle": "I'm the diver's best friend, a lifeline to breathe,\nIn this underwater world, I help you not to seethe.\nWithout me, you'll gasp, your survival at risk,\nIn a sunken ship's depths, which treasure do I brisk?\nWhat am I?",
-            "answer": "Air tank"
+            "riddle": "A treasure sought by pirates bold,\nBuried deep in sand and gold.\n'X' marks the spot, a map to guide,\nWhere is this chest of wealth and pride?",
+            "answer": "Treasure chest"
         },
         "Riddle 2": {
-            "riddle": "Down in the depths where the ship met its fate,\nI rest on the ocean floor, don't hesitate.\nA canister of air, a lifeline so true,\nIn this watery tomb, I wait for you.\nWhat artifact am I, hidden from sight?",
-            "answer": "Air tank"
+            "riddle": "Upon the waves, a ship I steer,\nA skull and bones flag, a sight of fear.\nMy crew and I sail, seeking the loot,\nWhat am I, the terror of the route?",
+            "answer": "Pirate ship"
         },
         "Riddle 3": {
-            "riddle": "Amidst the shipwreck's gloom, a secret I keep,\nWith compressed air inside, I'm not yours to sweep.\nAs you venture through this aquatic abode,\nFind me to ensure your journey's bestowed.\nWhat's my identity, lost beneath the sea?",
-            "answer": "Air tank"
+            "riddle": "With a peg leg and eye patch, I roam,\nSearching for treasures and tales to be known.\nIn tales of the sea, I'm a legend renowned,\nWho am I, with a parrot and a hound?",
+            "answer": "Pirate captain"
         },
         "Riddle 4": {
-            "riddle": "Bubbles rise as you exhale, beneath the waves so deep,\nTo explore this sunken vessel, treasure to reap.\nWith limited breath, you search the ship's core,\nBut find me to replenish and dive once more.\nWhat object do you need, submerged in this scene?",
-            "answer": "Air tank"
+            "riddle": "An island hideout, a pirate's reprieve,\nCaves and coves where secrets weave.\nWhispers of gold and maps are shared,\nWhat place is this, where pirate legends dared?",
+            "answer": "Secret island"
         },
         "Riddle 5": {
-            "riddle": "A tank of air, my purpose is clear,\nTo explore the depths without any fear.\nIn this submerged ship, your quest begins,\nFor safety and breath, unlock my wins.\nWhat am I, waiting in this underwater space?",
-            "answer": "Air tank"
+            "riddle": "Through storms and calms, my compass true,\nGuiding to riches, the old and the new.\nI point to fortune, adventure untold,\nWhat instrument am I, made of metal and bold?",
+            "answer": "Compass"
         }
     }
 
