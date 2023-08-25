@@ -169,8 +169,8 @@ def use_item(current_room, item):
         print("You have found a hidden clue!")
         # Additional game logic for revealing the clue
     elif item == "air tank":
-        print("You must unlock this air tank by solving a riddle, if you are succesful, your oxygen will increase by "
-              "5, if you are unsuccesful, your oxygen will decrease by 2")
+        print("You must unlock this air tank by solving a riddle, if you are successful, your oxygen will increase by "
+              "5, if you are unsuccessful, your oxygen will decrease by 2")
         choice = input("Do you wish to solve the riddle?")
         if choice == "yes":
             air_tank_riddle()
@@ -278,6 +278,13 @@ def display_help():
     print(
         "1. steering room, 2. buffet, 3. kitchen, 4.theatre, 5. casino, 6.engine room, 7.crew break room, 8. back stage, 9.nightclub, 10. lodging")
 
+def check_oxygen_level():
+    if player['oxygen_level'] <= 0:
+        print("Your oxygen level has dropped to 0 or below. You can't breathe anymore.")
+        print("Game Over.")
+        # You can add further actions here, like asking the player if they want to restart or exit.
+        # For simplicity, this function just ends the game.
+        exit()  # This exits the game. You can replace it with other actions as needed.
 
 # Main game loop
 def play_game():
@@ -294,7 +301,9 @@ def play_game():
         if command == "help":
             display_help()
         else:
+            check_oxygen_level()
             game_running = handle_input(command)
+            check_oxygen_level()
 
 
 # Start the game
