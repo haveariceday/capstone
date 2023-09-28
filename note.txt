@@ -1,6 +1,6 @@
 Game concept - Escape Sunken Ship
 
-Ship is sinking. The player is stuck in the ship.
+Sunken ship. The player is stuck in the ship.
 The player needs to solve puzzles to escape the ship before the oxygen level goes down.
 
 10 wrong moves in a row = lose

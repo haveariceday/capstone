@@ -1,5 +1,4 @@
 # Escape Room Text Adventure Game
-
 import random
 
 # Define player attributes
@@ -98,7 +97,7 @@ rooms = {
 # Define game actions
 actions = {
     "look": "look around",
-    "go": "go to",
+    "go": "go to",  #unnecessary
     "take": "take",
     "use": "use"
 }
@@ -257,6 +256,54 @@ def scramble_word(current_room):
         return False
 
 
+def choose_random_word():
+    word_list = ["chest", "skull", "sword", "storm"]
+    return random.choice(word_list)
+
+
+def get_guess():
+    while True:
+        guess = input("Enter your 5-letter word guess: ").lower()
+        if len(guess) == 5 and guess.isalpha():
+            return guess
+        else:
+            print("Please enter a valid 5-letter word.")
+
+
+def evaluate_guess(hidden_word, guess):
+    if guess == hidden_word:
+        return "You guessed the word! Congratulations!"
+
+    feedback = []
+    for i in range(5):
+        if guess[i] == hidden_word[i]:
+            feedback.append(guess[i])
+        elif guess[i] in hidden_word:
+            feedback.append("O")
+        else:
+            feedback.append(".")
+
+    return " ".join(feedback)
+
+
+def wordle():
+    hidden_word = choose_random_word()
+    attempts = 6
+
+    print("Welcome to Wordle! You have 6 attempts to guess two letters to complete a word.")
+
+    for attempt in range(1, attempts + 1):
+        print(f"Attempt {attempt}:")
+        guess = get_guess()
+        result = evaluate_guess(hidden_word, guess)
+        print(result)
+
+        if result == "You guessed the word! Congratulations!":
+            break
+
+    if result != "You guessed the word! Congratulations!":
+        print(f"Sorry, you're out of attempts. The word was '{hidden_word}'.")
+
 def display_help():
     print("--- COMMAND OPTIONS---")
     print("1. go to [location name]")
@@ -303,6 +350,7 @@ def play_game():
         else:
             check_oxygen_level()
             game_running = handle_input(command)
+            wordle()
             check_oxygen_level()
 
 
