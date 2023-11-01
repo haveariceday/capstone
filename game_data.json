@@ -1,0 +1,25 @@
+{
+    "Rooms": {
+        "room1": {
+            "description": "This is room 1",
+            "exits": {"north": "room2", "east": "room3"}
+        },
+        "room2": {
+            "description": "This is room 2",
+            "exits": {"south": "room1"}
+        },
+        "room3": {
+            "description": "This is room 3",
+            "exits": {"west": "room1"}
+        }
+    },
+    "Items": {
+        "key": {"name": "Key", "description": "An old rusty key", "room": "room1"},
+        "book": {"name": "Book", "description": "A mysterious ancient book", "room": "room1"},
+        "potion": {"name": "Potion", "description": "A healing potion", "room": "room2"},
+        "sword": {"name": "Sword", "description": "A sharp and shiny sword", "room": "room3"}
+    },
+    "Commands": {
+        "valid_commands": ["go", "look","take","drop", "eat","inventory","savegame","loadgame", "quit"]
+    }
+}

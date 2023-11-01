@@ -1,0 +1,9 @@
+Project Mission:
+   We want to keep our first iteration very simple!
+   We are going to do this somehwat like AGILE: get a Minimum Viable Project, refactor and modify as we go
+
+   What does the MVP look like here?
+        A real bare bones idea is to envision a 'train car' like game where a player should only move in one direction
+        but is technically allowed to move both directions. No items, just moving through the rooms.
+
+   Next Step:
