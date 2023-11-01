@@ -272,7 +272,8 @@ def get_guess():
 
 def evaluate_guess(hidden_word, guess):
     if guess == hidden_word:
-        return "You guessed the word! Congratulations!"
+        player["oxygen_level"] += 10
+        return "You guessed the word! Congratulations! You earned 10 oxygen level"
 
     feedback = []
     for i in range(5):
@@ -291,17 +292,22 @@ def wordle():
     attempts = 6
 
     print("Welcome to Wordle! You have 6 attempts to guess two letters to complete a word.")
-
+    print("If you get within the limit, the oxygen will increase by 10, your oxygen will decrease by 2 every time you have a wrong guess."
+          "In this game O means that the letter exists in the letter but not in order. The dot . means the letter does not exist in the word."
+          "If the letter you guessed is in the right place, then the letter shows up on the correct position.")
     for attempt in range(1, attempts + 1):
         print(f"Attempt {attempt}:")
         guess = get_guess()
         result = evaluate_guess(hidden_word, guess)
         print(result)
 
-        if result == "You guessed the word! Congratulations!":
+        if result == "You guessed the word! Congratulations! You earned 10 oxygen level":
             break
+        else:
+            player["oxygen_level"] -= 2
+            print("Your guess is wrong. Your oxygen decreased by 2.")
 
-    if result != "You guessed the word! Congratulations!":
+    if result != "You guessed the word! Congratulations! You earned 10 oxygen level":
         print(f"Sorry, you're out of attempts. The word was '{hidden_word}'.")
 
 def display_help():
