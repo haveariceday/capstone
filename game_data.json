@@ -20,6 +20,6 @@
         "sword": {"name": "Sword", "description": "A sharp and shiny sword", "room": "room3"}
     },
     "Commands": {
-        "valid_commands": ["go", "look","take","drop", "eat","inventory","savegame","loadgame", "quit"]
+        "valid_commands": ["go", "look","take","drop", "eat","help","inventory","savegame","loadgame", "quit"]
     }
 }
