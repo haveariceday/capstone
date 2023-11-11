@@ -1,161 +1,240 @@
-{
- "number": 0,
-  "verbs": [
-    "look",
-    "jump",
-    "move",
-    "press",
-    "input",
-    "insert",
-    "read",
-    "call",
-    "inspect"
-  ]
-},
-{
-  "number": 1,
-  "room_name":"Lodging/hotel room",
-  "scenario": "Power is off, key card doesn't work as a result. You read the welcome brochure with included emergency\\n information and it tells you there is a manual key in the safe. The safe is locked so you search around and find an id. You input the birthday into the safe and find the key along with... ",
-  "answer_key": ["read welcome brochure","inspect safe","inspect desk", "input birthday"],
-  "hint_comment":"",
-  "places": [
-    "safe",
-    "welcome brochure",
-    "desk"
-  ]
-},
-{
-  "number": 2,
-  "room_name":"theatre",
-  "scenario": "Oh no, after the emergency bell rang, the theater was shut down and you were the only left in theater",
-        "You will have to find ways to evacuate this room before the ship sinks!",
-        "When you look around the theater, there are a stage, audience seats, and the entrance",
-        "Where do you want to inspect?",
-  "answer_key": ["move to the stage","inspect audience seats","look at the entrance"],
-  "hint_comment":"",
-  "places": [
-    "stage",
-    "audience seats",
-    "entrance"
-]
-},
-{
-  "number": 3,
-  "room_name":"nightclub",
-  "scenario": "There was a fun party going on in the club tonight, until everyone ran to the exit.",
-        "There seems to be a paper near the DJ booth that tonight's DJ dropped.",
-        "The paper shows the name of the drink and some numbers that might help you get out of the room!",
-        "What would you like to do?",
-  "answer_key": ["Move to DJ booth", "Inspect paper", "Move to the bar", "Inspect bottles", "Move to the dance floor"],
-  "hint_comment":"",
-  "places": [
-    "bar",
-    "dance floor",
-    "DJ booth"
-]
-},
-{
-  "number": 4,
-  "room_name":"casino",
-  "scenario": "Eveerybody was in a rush to the exit, needless to say no chips were cashed out. Places to inspect are the slot machine, roulette, and the blackjack table. you might find a casino employee badge that gets you to the buffet",
-  "answer_key": ["inspect roulette","press keycard"],
-  "hint_comment":"",
-  "objects": [
-    "slot machine",
-    "roulette",
-    "blackjack"
-]
-},
-{
-  "number": 5,
-  "room_name":"buffet",
-  "scenario": "There was a lot of delicious foods at the Japanese buffet this evening.",
-        "Oopes, you fell asleep at the dinner table and you were the only one left in the room!",
-        "It seems like the waiter left a note for you how to escape the room",
-        "The note says hi, we have to leave. Good luck. Eat till you fall.",
-        "Strange note but okay, what would you like to do?"
-  "answer_key": ["Inspect buffet","Insepect seats","Inspect the reception table"],
-  "hint_comment":"Japanese saying Eat till you fall is used in Osaka",
-  "answer": "Takoyaki",
-  "places": [
-    "buffet",
-    "seat",
-    "reception"
-]
-},
-{
-  "number": 6,
-  "room_name":"crews break room",
-  "question": "You are in the crews break room. They are the first ones to notice that ship was sinking.",
-        "There are outfits thrown everywhere on the bench and on bank beds.",
-        "There are hats, gloves, scarves, slacks, aprons, and vests laying around.",
-        "When you look around, there are lockers and some of them are open. There might be some tools to escape the room",
-        "What would you like to do?"
-  "answer_key": ["Inspect lockers", "Move bank beds", "Look at the bench"],
-  "hint_comment":"",
-  "places": [
-    "locker",
-    "bench",
-    "bank beds"
-]
-},
-{
-  "number": 7,
-  "room_name":"Bridge/steering room",
-  "question": "You are in the steering room. Unfortunately, the ship is broken into a half and the water is coming into the room",
-        "We don't have much time left until this room is under the water. But there has to be a way to escape this room!",
-        "Let's look around. In this room, there is a steering wheel, navigation controls, and a map",
-        "The map looks odd... There is a piece missing from the map... What would you like to do?",
-  "answer_key": ["Inspect the map", "Munouver the steering wheel", "Look at the navigation controls"],
-  "hint_comment":"",
-  "places": [
-    "steering wheel",
-    "navigation controls",
-    "map"
-]
-},
-{
-  "number": 8,
-  "room_name":"kitchen",
-  "question": "You are in the kitchen. It is one of the biggest rooms on this ship. This is where the magic happens.",
-        "well... not anymore! It is emptiest kitchen you have ever seen. Let's take a tour.",
-        "The kitchen is divided into three parts, cooking, cleaning, and storage area.",
-        "Where would you like to take a look at?"
-  "answer_key": ["Cooking area","Cleaning area", "Storage area"],
-  "hint_comment":"",
-  "places": [
-    "griddle",
-    "dishwasher",
-    "dumpster/trash cans",
-    "refrigerator"
-]
+//{
+// "number": 0,
+//  "verbs": [
+//    "look",
+//    "jump",
+//    "move",
+//    "press",
+//    "input",
+//    "insert",
+//    "read",
+//    "call",
+//    "inspect"
+//  ]
+//},
+//{
+//  "number": 1,
+//  "room_name":"Lodging/hotel room",
+//  "scenario": "Power is off, key card doesn't work as a result. You read the welcome brochure with included emergency\\n information and it tells you there is a manual key in the safe. The safe is locked so you search around and find an id. You input the birthday into the safe and find the key along with... ",
+//  "answer_key": ["read welcome brochure","inspect safe","inspect desk", "input birthday"],
+//  "hint_comment":"",
+//  "places": [
+//    "safe",
+//    "welcome brochure",
+//    "desk"
+//  ]
+//},
+//{
+//  "number": 2,
+//  "room_name":"theatre",
+//  "scenario": "Oh no, after the emergency bell rang, the theater was shut down and you were the only left in theater",
+//        "You will have to find ways to evacuate this room before the ship sinks!",
+//        "When you look around the theater, there are a stage, audience seats, and the entrance",
+//        "Where do you want to inspect?",
+//  "answer_key": ["move to the stage","inspect audience seats","look at the entrance"],
+//  "hint_comment":"",
+//  "places": [
+//    "stage",
+//    "audience seats",
+//    "entrance"
+//]
+//},
+//{
+//  "number": 3,
+//  "room_name":"nightclub",
+//  "scenario": "There was a fun party going on in the club tonight, until everyone ran to the exit.",
+//        "There seems to be a paper near the DJ booth that tonight's DJ dropped.",
+//        "The paper shows the name of the drink and some numbers that might help you get out of the room!",
+//        "What would you like to do?",
+//  "answer_key": ["Move to DJ booth", "Inspect paper", "Move to the bar", "Inspect bottles", "Move to the dance floor"],
+//  "hint_comment":"",
+//  "places": [
+//    "bar",
+//    "dance floor",
+//    "DJ booth"
+//]
+//},
+//{
+//  "number": 4,
+//  "room_name":"casino",
+//  "scenario": "Eveerybody was in a rush to the exit, needless to say no chips were cashed out. Places to inspect are the slot machine, roulette, and the blackjack table. you might find a casino employee badge that gets you to the buffet",
+//  "answer_key": ["inspect roulette","press keycard"],
+//  "hint_comment":"",
+//  "objects": [
+//    "slot machine",
+//    "roulette",
+//    "blackjack"
+//]
+//},
+//{
+//  "number": 5,
+//  "room_name":"buffet",
+//  "scenario": "There was a lot of delicious foods at the Japanese buffet this evening.",
+//        "Oopes, you fell asleep at the dinner table and you were the only one left in the room!",
+//        "It seems like the waiter left a note for you how to escape the room",
+//        "The note says hi, we have to leave. Good luck. Eat till you fall.",
+//        "Strange note but okay, what would you like to do?"
+//  "answer_key": ["Inspect buffet","Insepect seats","Inspect the reception table"],
+//  "hint_comment":"Japanese saying Eat till you fall is used in Osaka",
+//  "answer": "Takoyaki",
+//  "places": [
+//    "buffet",
+//    "seat",
+//    "reception"
+//]
+//},
+//{
+//  "number": 6,
+//  "room_name":"crews break room",
+//  "question": "You are in the crews break room. They are the first ones to notice that ship was sinking.",
+//        "There are outfits thrown everywhere on the bench and on bank beds.",
+//        "There are hats, gloves, scarves, slacks, aprons, and vests laying around.",
+//        "When you look around, there are lockers and some of them are open. There might be some tools to escape the room",
+//        "What would you like to do?"
+//  "answer_key": ["Inspect lockers", "Move bank beds", "Look at the bench"],
+//  "hint_comment":"",
+//  "places": [
+//    "locker",
+//    "bench",
+//    "bank beds"
+//]
+//},
+//{
+//  "number": 7,
+//  "room_name":"Bridge/steering room",
+//  "question": "You are in the steering room. Unfortunately, the ship is broken into a half and the water is coming into the room",
+//        "We don't have much time left until this room is under the water. But there has to be a way to escape this room!",
+//        "Let's look around. In this room, there is a steering wheel, navigation controls, and a map",
+//        "The map looks odd... There is a piece missing from the map... What would you like to do?",
+//  "answer_key": ["Inspect the map", "Munouver the steering wheel", "Look at the navigation controls"],
+//  "hint_comment":"",
+//  "places": [
+//    "steering wheel",
+//    "navigation controls",
+//    "map"
+//]
+//},
+//{
+//  "number": 8,
+//  "room_name":"kitchen",
+//  "question": "You are in the kitchen. It is one of the biggest rooms on this ship. This is where the magic happens.",
+//        "well... not anymore! It is emptiest kitchen you have ever seen. Let's take a tour.",
+//        "The kitchen is divided into three parts, cooking, cleaning, and storage area.",
+//        "Where would you like to take a look at?"
+//  "answer_key": ["Cooking area","Cleaning area", "Storage area"],
+//  "hint_comment":"",
+//  "places": [
+//    "griddle",
+//    "dishwasher",
+//    "dumpster/trash cans",
+//    "refrigerator"
+//]
+//
+//},
+//{
+//  "number": 9,
+//  "room_name":"backstage",
+//  "question": "Welcome to the backstage of the theater! This place gets very busy during the show.",
+//        "There are locker, makeup vanity, and clothing rack in the backstage. There are many items and it is cluttered.",
+//        "What would you like to do?"
+//  "answer_key": ["Pull outfit out of the clothing rack", "Inspect makeup vanity", "Inspect locker"],
+//  "hint_comment":"",
+//  "places": [
+//    "actor's locker",
+//    "makeup vanity",
+//    "clothing rack"
+//]
+//},
+//{
+//  "number": 10,
+//  "room_name":"engine room",
+//  "question": "You made it to the final room, the engine room. In this room, there are water flow controller, air conditioning area, and the engine meter.",
+//        "Cords are crushing and they started to spark. You can imagine if the water comes in... you must escape!",
+//        "What would like to do?"
+//  "answer_key": ["Inspect water flow controller", "Inspect air conditioning area", "Inspect the engine meter"],
+//  "hint_comment":"",
+//  "places": [
+//    "water flow controller",
+//    "air conditioning area",
+//    "engine meter"
+//]
+//}
 
-},
+
+  west
+  2 5 8
+1 3 6   10 north
+  4 7 9
+  east
+
 {
-  "number": 9,
-  "room_name":"backstage",
-  "question": "Welcome to the backstage of the theater! This place gets very busy during the show.",
-        "There are locker, makeup vanity, and clothing rack in the backstage. There are many items and it is cluttered.",
-        "What would you like to do?"
-  "answer_key": ["Pull outfit out of the clothing rack", "Inspect makeup vanity", "Inspect locker"],
-  "hint_comment":"",
-  "places": [
-    "actor's locker",
-    "makeup vanity",
-    "clothing rack"
-]
-},
-{
-  "number": 10,
-  "room_name":"engine room",
-  "question": "You made it to the final room, the engine room. In this room, there are water flow controller, air conditioning area, and the engine meter.",
-        "Cords are crushing and they started to spark. You can imagine if the water comes in... you must escape!",
-        "What would like to do?"
-  "answer_key": ["Inspect water flow controller", "Inspect air conditioning area", "Inspect the engine meter"],
-  "hint_comment":"",
-  "places": [
-    "water flow controller",
-    "air conditioning area",
-    "engine meter"
-]
+    "Rooms": {
+        "room1": {
+            "description": "This is room 1",
+            "exits": {"north": "room3", "west": "room2", "east": "room4"}
+        },
+        "room2": {
+            "description": "This is room 2",
+            "exits": {"north": "room5", "south": "room1", "east": "room3"}
+        },
+        "room3": {
+            "description": "This is room 3",
+            "exits": {"north": "room6", "south": "room1", "east": "room4", "west": "room2"}
+        }
+        "room4": {
+            "description": "This is room 4",
+            "exits": {"north": "room2", "south": "room1", "west": "room3"}
+        },
+        "room5": {
+            "description": "This is room 5",
+            "exits": {"north": "room8", "south": "room2", "east": "room6"}
+        },
+        "room6": {
+            "description": "This is room 6",
+            "exits": {"north": "room10", "south": "room3", "east": "room7", "west": "room5"}
+        }
+        "room7": {
+            "description": "This is room 7",
+            "exits": {"north": "room9", "south": "room4", "west": "room6"}
+        },
+        "room8": {
+            "description": "This is room 8",
+            "exits": {"north": "room10", "south": "room5"}
+        },
+        "room9": {
+            "description": "This is room 9",
+            "exits": {"north": "room10", "south": "room7"}
+        }
+        "room10": {
+            "description": "This is room 10",
+            "exits": {"south": "room6", "east": "room9", "west": "room8"}
+        }
+    },
+    "Objects": {
+        "key": {
+			"name": "Key",
+			"description": "An old rusty key",
+			"room": "room1"
+			},
+        "book": {
+			"name": "Book",
+			"description": "A mysterious ancient book",
+			"room": "room1"
+			},
+        "potion": {
+			"name": "Potion",
+			"description": "A healing potion",
+			"room": "room2"
+			},
+        "sword": {
+			"name": "Sword",
+			"description": "A sharp and shiny sword",
+			"room": "room3"
+			}
+    },
+    "Verbs": {
+        "valid_commands": ["go", "look", "take", "grab", "pickup", "drop", "eat", "inventory","savegame","loadgame", "quit", "help", "lookat", "hide", "put", "jump", "cut", "shake"]
+    }
 }
+
+
