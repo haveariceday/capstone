@@ -161,79 +161,153 @@
 //}
 
 
-  west
-  2 5 8
-1 3 6   10 north
-  4 7 9
-  east
-
 {
     "Rooms": {
         "room1": {
-            "description": "This is room 1",
+            "description": "You're in the captain's quarters. The captain's quarters are adorned with remnants of opulence, now weathered and waterlogged. A grand wooden desk sits at one end, scattered with nautical charts and an old captain's log. A faded portrait of the ship's captain hangs on the damp wall, its eyes seemingly following your every move",
             "exits": {"north": "room3", "west": "room2", "east": "room4"}
         },
         "room2": {
-            "description": "This is room 2",
+            "description": "You're in the gallery. The galley is a compact space filled with rusty pots, pans, and remnants of a once lively kitchen. A partially submerged dining table sits in the center, surrounded by overturned chairs. Dim light filters through a cracked porthole, revealing seaweed-covered surfaces and eerie shadows",
             "exits": {"north": "room5", "south": "room1", "east": "room3"}
         },
         "room3": {
-            "description": "This is room 3",
+            "description": "You're in the engine room. Descending into the bowels of the ship, you find the engine room. Dim emergency lights flicker, casting eerie shadows on the massive, corroded machinery. The air is thick with the scent of oil and saltwater. A rhythmic creaking suggests the ship is still settling on the ocean floor.",
             "exits": {"north": "room6", "south": "room1", "east": "room4", "west": "room2"}
         }
         "room4": {
-            "description": "This is room 4",
+            "description": "You're in the cargo hold. This cavernous space is filled with stacks of forgotten cargo, covered in barnacles and seaweed. Wooden crates, some cracked open, reveal mysterious contents. Water drips steadily from the ceiling, creating puddles on the uneven floor.",
             "exits": {"north": "room2", "south": "room1", "west": "room3"}
         },
         "room5": {
-            "description": "This is room 5",
+            "description": "You're in the navigator's room. Navigational instruments and torn maps litter this room. The remnants of a shattered compass are scattered across a worn-out table. A cracked astrolabe hangs on the wall. The eerie glow from a bioluminescent fish outside the shattered window provides the only source of light.",
             "exits": {"north": "room8", "south": "room2", "east": "room6"}
         },
         "room6": {
-            "description": "This is room 6",
+            "description": "You're in the crew quarters. The crew quarters are cramped and claustrophobic. Bunk beds, now askew, line the walls. Personal belongings are scattered about the damp floor, including old sailor uniforms and tattered letters. The room feels haunted, as if the memories of the long-gone crew still linger.",
             "exits": {"north": "room10", "south": "room3", "east": "room7", "west": "room5"}
         }
         "room7": {
-            "description": "This is room 7",
+            "description": "You're at the observation deck. Ascending to the highest point of the ship, you find the observation deck. Broken railings and shattered glass reveal the devastating force of the ship's descent. Despite the damage, the panoramic view of the murky underwater world is captivating. A school of ghostly fish swims by, casting fleeting shadows.",
             "exits": {"north": "room9", "south": "room4", "west": "room6"}
         },
         "room8": {
-            "description": "This is room 8",
+            "description": "You're in the infirmary. The infirmary is a somber room filled with rusty medical equipment and damp, decaying bandages. The sickly sweet smell of mildew hangs in the air. Flickering overhead lights create a surreal atmosphere, casting shadows that dance across abandoned medical charts and empty beds.",
             "exits": {"north": "room10", "south": "room5"}
         },
         "room9": {
-            "description": "This is room 9",
+            "description": "You're in the communications room. The once vital hub for communication is now a waterlogged chamber. Old radio equipment, covered in seaweed, stands silent. The remnants of desperate messages are scattered across the floor. The eerie static of a malfunctioning radio intermittently fills the room, creating an unsettling ambiance.",
             "exits": {"north": "room10", "south": "room7"}
         }
         "room10": {
-            "description": "This is room 10",
+            "description": "You made it to the treasure room. Deep within the bowels of the ship, you stumble upon a hidden chamber filled with the ship's precious cargo. Mysterious artifacts, chests of gold and silver, and ancient relics are strewn about. The room is dimly lit by the soft glow of luminescent algae clinging to the treasures, creating an otherworldly spectacle in the sunken darkness.",
             "exits": {"south": "room6", "east": "room9", "west": "room8"}
         }
     },
     "Objects": {
         "key": {
-			"name": "Key",
-			"description": "An old rusty key",
+			"name": "Navigation Key",
+			"description": "A unique key with a nautical design, possibly used to unlock a secret compartment.",
 			"room": "room1"
 			},
-        "book": {
-			"name": "Book",
-			"description": "A mysterious ancient book",
+        "log": {
+			"name": "Captain's Log",
+			"description": "A waterlogged logbook containing hints about the ship's last voyage.",
 			"room": "room1"
 			},
-        "potion": {
-			"name": "Potion",
-			"description": "A healing potion",
+        "ladle": {
+			"name": "Rusty Ladle",
+			"description": "A rusted ladle that could be repurposed as a makeshift tool.",
 			"room": "room2"
 			},
-        "sword": {
-			"name": "Sword",
-			"description": "A sharp and shiny sword",
+        "diary": {
+			"name": "Cook's Diary",
+			"description": "A diary detailing the last meals prepared on the ship, offering clues about hidden passages.",
+			"room": "room2"
+			},
+		"wrench": {
+			"name": "Corroded Wrench",
+			"description": "A heavy wrench that could be useful for loosening or breaking things.",
 			"room": "room3"
+			},
+		"blueprint": {
+			"name": "Damaged Blueprint",
+			"description": "A partially damaged blueprint of the ship's engine, providing insights into potential escape routes.",
+			"room": "room3"
+			},
+		"crate": {
+			"name": "Sealed Crate",
+			"description": "A tightly sealed crate containing a mysterious object that might aid the player's progress.",
+			"room": "room4"
+			},
+		"helmet": {
+			"name": "Diving Helmet",
+			"description": "A sturdy diving helmet that allows the player to explore underwater areas without the risk of drowning.",
+			"room": "room4"
+			},
+		"needle": {
+			"name": "Shattered Compass Needle",
+			"description": "A piece of the ship's compass that, when combined with other parts, could become a functional tool.",
+			"room": "room5"
+			},
+		"chart": {
+			"name": "Star Chart",
+			"description": "A celestial map with constellations marked, offering clues for navigation.",
+			"room": "room5"
+			},
+		"page": {
+			"name": "Torn Diary Pages",
+			"description": "Fragments of diary entries that, when pieced together, reveal a crew member's personal experiences.",
+			"room": "room6"
+			},
+		"photo": {
+			"name": "Faded Photograph",
+			"description": "A photograph depicting the ship's crew, possibly providing hints about their relationships.",
+			"room": "room6"
+			},
+		"algea": {
+			"name": "Bioluminescent Algae Sample",
+			"description": "A sample of the algae outside, which might be used to illuminate dark areas.",
+			"room": "room7"
+			},
+		"binoclulars": {
+			"name": "Binoculars",
+			"description": "Functional binoculars that help players spot distant clues.",
+			"room": "room7"
+			},
+		"firstaid": {
+			"name": "Waterlogged First Aid Kit",
+			"description": "A first aid kit with salvageable supplies that could be used later.",
+			"room": "room8"
+			},
+		"note": {
+			"name": "Prescription Note",
+			"description": "A note hinting at a crew member's medical condition, potentially providing clues.",
+			"room": "room8"
+			},
+		"radio": {
+			"name": "Old Radio Transmitter",
+			"description": "A damaged radio transmitter that, with repair, could be used to send distress signals.",
+			"room": "room9"
+			},
+		"message": {
+			"name": "Encoded Message",
+			"description": "A coded message that, when deciphered, reveals crucial information about the ship's predicament.",
+			"room": "room9"
+			},
+		"relic": {
+			"name": "Ancient Relic",
+			"description": "A valuable artifact that may have hidden powers.",
+			"room": "room10"
+			},
+		"crown": {
+			"name": "Jeweled Crown",
+			"description": "A regal crown adorned with precious gems, possibly used for unlocking a secret compartment or passage.",
+			"room": "room10"
 			}
     },
     "Verbs": {
-        "valid_commands": ["go", "look", "take", "grab", "pickup", "drop", "eat", "inventory","savegame","loadgame", "quit", "help", "lookat", "hide", "put", "jump", "cut", "shake"]
+        "valid_commands": ["go", "look", "take", "grab", "pickup", "drop", "eat", "inventory","savegame","loadgame", "quit", "help", "lookat", "hide", "put", "jump", "unlock", "search", "open", "close", "read", "move","listen" ]
     }
 }
 
