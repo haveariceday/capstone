@@ -393,7 +393,7 @@ class Gameplay:
         self.name = input("Enter your name: ")
 
     def load_data(self, data_type):
-        with open('game_data.json', 'r') as file:
+        with open('gameSetup.json', 'r') as file:
             game_data = json.load(file)
 
         return game_data.get(data_type, {})
