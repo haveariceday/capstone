@@ -361,45 +361,52 @@ import json
 import os
 
 
+def load_data(data_type):
+    with open('gameSetup.json', 'r') as file:
+        game_data = json.load(file)
+
+    return game_data.get(data_type, {})
+
+
 class Gameplay:
     def __init__(self):
         self.name = ""
         self.current_room = "room1"
         self.oxygen = 100
         self.inventory = []
+        self.rooms_data = load_data('Rooms')
+        self.objects_data = load_data('Objects')
+        self.verbs_data = load_data('Verbs')
 
-    def load_game_state(self, filename='saved_game.json'):
-        if os.path.exists(filename):
-            choice = input("Do you want to load a saved game? (yes/no): ").lower()
-
-            if choice == 'yes':
-                with open(filename, 'r') as file:
-                    game_state = json.load(file)
-
-                self.name = game_state.get('name', '')
-                self.current_room = game_state.get('current_room', 'room1')
-                self.oxygen = game_state.get('oxygen', 100)
-                self.inventory = game_state.get('inventory', [])
-
-                print(f"Welcome back, {self.name}!")
-                return True
-            else:
-                print("Starting a new game.")
-                return False
-        else:
-            return False
+    # def load_game_state(self, filename='saved_game.json'):
+    #     if os.path.exists(filename):
+    #         choice = input("Do you want to load a saved game? (yes/no): ").lower()
+    #
+    #         if choice == 'yes':
+    #             with open(filename, 'r') as file:
+    #                 game_state = json.load(file)
+    #
+    #             self.name = game_state.get('name', '')
+    #             self.current_room = game_state.get('current_room', 'room1')
+    #             self.oxygen = game_state.get('oxygen', 100)
+    #             self.inventory = game_state.get('inventory', [])
+    #             self.rooms_data = game_state.get('inventory', [])
+    #             self.objects_data = game_state.get('inventory', [])
+    #             self.verbs_data = game_state.get('inventory', [])
+    #
+    #             print(f"Welcome back, {self.name}!")
+    #             return True
+    #         else:
+    #             print("Starting a new game.")
+    #             return False
+    #     else:
+    #         return False
 
     def get_player_name(self):
         self.name = input("Enter your name: ")
 
-    def load_data(self, data_type):
-        with open('gameSetup.json', 'r') as file:
-            game_data = json.load(file)
-
-        return game_data.get(data_type, {})
-
     def go(self, direction):
-        room_data = self.load_data('Rooms')
+        room_data = self.rooms_data
         exits = room_data.get(self.current_room, {}).get('exits', {})
 
         if direction in exits:
@@ -411,28 +418,14 @@ class Gameplay:
             print(f"There is no exit in the {direction} direction.")
 
     def look(self):
-        room_data = self.load_data('Rooms')
-        items = room_data.get(self.current_room, {}).get('items', [])
+        pass
 
-        print(f"{self.name} is in {self.current_room}. Oxygen: {self.oxygen}%")
-        print("Items in the room:", ', '.join(items))
-        print("Inventory:", ', '.join(self.inventory))
+    def look_at(self, item_name):
+        pass
 
-    def take(self, item_name):
-        items_data = self.load_data('Items')
-
-        if item_name in items_data:
-            item = items_data[item_name]
-            if item.get('room') == self.current_room:
-                self.inventory.append(item_name)
-                print(f"{self.name} took the {item_name}.")
-            else:
-                print(f"{self.name}, there is no {item_name} in the current room.")
-        else:
-            print(f"{self.name}, there is no {item_name} in the game.")
 
     def drop(self, item_name):
-        items_data = self.load_data('Items')
+        items_data = self.objects_data
 
         if item_name in self.inventory:
             item = items_data.get(item_name, {})
@@ -442,8 +435,28 @@ class Gameplay:
         else:
             print(f"{self.name}, you don't have {item_name} in your inventory.")
 
-    def eat(self):
-        print(f"{self.name} is eating something.")
+    def take(self, item_name):
+        items_data = self.objects_data
+
+        if item_name in items_data:
+            item = items_data[item_name]
+            if item.get('room') == self.current_room:
+                if item_name not in self.inventory:
+                    self.inventory.append(item_name)
+                    print(f"{self.name} took the {item_name}.")
+                else:
+                    print(f"{self.name}, you already have the {item_name} in your inventory.")
+            else:
+                print(f"{self.name}, there is no {item_name} in the current room.")
+        else:
+            print(f"{self.name}, there is no {item_name} in the game.")
+
+    def eat(self, item_name):
+        if item_name in self.inventory:
+            self.inventory.remove(item_name)
+            print(f"{self.name} ate the {item_name}. It disappears from your inventory.")
+        else:
+            print(f"{self.name}, you don't have {item_name} in your inventory.")
 
     def display_inventory(self):
         print(f"{self.name}'s Inventory: {', '.join(self.inventory)}")
@@ -465,14 +478,18 @@ class Gameplay:
         print("Exiting the game. Goodbye!")
 
     def display_help(self):
-        valid_commands = self.load_data('Commands').get('valid_commands', [])
+        valid_commands = load_data('Commands').get('valid_commands', [])
         print("Available commands (verbs):", ', '.join(valid_commands))
 
-    def parse_user_input(self):
-        valid_commands = self.load_data('Commands').get('valid_commands', [])
+    def play(self):
+        # Placeholder for the 'play' command logic
+        pass
 
-        if not self.load_game_state():
-            self.get_player_name()
+    def parse_user_input(self):
+        valid_commands = load_data('Verbs').get('valid_commands', [])
+
+        # if not self.load_game_state():
+        self.get_player_name()
 
         while True:
             user_input = input(
@@ -488,22 +505,28 @@ class Gameplay:
                     self.go(direction)
                 elif command == 'look':
                     self.look()
-                elif command == 'take' and len(args) == 1:
+                elif command == 'look at' and len(args) == 1:
+                    item_name = args[0]
+                    self.look_at(item_name)
+                elif command in ['take', 'pickup', 'grab'] and len(args) == 1:
                     item_name = args[0]
                     self.take(item_name)
                 elif command == 'drop' and len(args) == 1:
                     item_name = args[0]
                     self.drop(item_name)
-                elif command == 'eat':
-                    self.eat()
+                elif command == 'eat'and len(args) == 1:
+                    item_name = args[0]
+                    self.eat(item_name)
                 elif command == 'inventory':
                     self.display_inventory()
                 elif command == 'savegame':
                     self.save_game()
-                elif command == 'loadgame':
-                    self.load_game_state()
+                # elif command == 'loadgame':
+                #     self.load_game_state()
                 elif command == 'help':
                     self.display_help()
+                elif command == 'play':
+                    self.play()
                 # Add more commands as needed
                 else:
                     print("Error: Invalid command format.")
