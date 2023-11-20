@@ -421,8 +421,7 @@ class Gameplay:
         print(room_description)
 
     def look_at(self, item_name):
-        # if object is in your current room or if its in your inventory....
-        if item_name in self.inventory:
+        if item_name in self.inventory or self.objects_data.get(item_name, {}).get('room') == self.current_room:
             item_description = self.objects_data.get(item_name, {}).get('description')
             print(item_description)
 
