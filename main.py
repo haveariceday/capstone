@@ -406,8 +406,7 @@ class Gameplay:
         self.name = input("Enter your name: ")
 
     def go(self, direction):
-        room_data = self.rooms_data
-        exits = room_data.get(self.current_room, {}).get('exits', {})
+        exits = self.rooms_data.get(self.current_room, {}).get('exits', {})
 
         if direction in exits:
             new_room = exits[direction]
@@ -418,17 +417,17 @@ class Gameplay:
             print(f"There is no exit in the {direction} direction.")
 
     def look(self):
-        pass
+        room_description = self.rooms_data.get(self.current_room, {}).get('description', {})
+        print(room_description)
 
     def look_at(self, item_name):
-        pass
-
+        if item_name in self.inventory or self.objects_data.get(item_name, {}).get('room') == self.current_room:
+            item_description = self.objects_data.get(item_name, {}).get('description')
+            print(item_description)
 
     def drop(self, item_name):
-        items_data = self.objects_data
-
         if item_name in self.inventory:
-            item = items_data.get(item_name, {})
+            item = self.objects_data.get(item_name, {})
             item['room'] = self.current_room
             self.inventory.remove(item_name)
             print(f"{self.name} dropped the {item_name} in the {self.current_room}.")
@@ -436,14 +435,13 @@ class Gameplay:
             print(f"{self.name}, you don't have {item_name} in your inventory.")
 
     def take(self, item_name):
-        items_data = self.objects_data
-
-        if item_name in items_data:
-            item = items_data[item_name]
+        if item_name in self.objects_data:
+            item = self.objects_data[item_name]
             if item.get('room') == self.current_room:
                 if item_name not in self.inventory:
                     self.inventory.append(item_name)
                     print(f"{self.name} took the {item_name}.")
+                    item['room'] = None
                 else:
                     print(f"{self.name}, you already have the {item_name} in your inventory.")
             else:
@@ -503,18 +501,18 @@ class Gameplay:
                 if command == 'go' and len(args) == 1:
                     direction = args[0]
                     self.go(direction)
-                elif command == 'look':
-                    self.look()
-                elif command == 'look at' and len(args) == 1:
+                elif command == 'lookat' and len(args) == 1:
                     item_name = args[0]
                     self.look_at(item_name)
+                elif command == 'look':
+                    self.look()
                 elif command in ['take', 'pickup', 'grab'] and len(args) == 1:
                     item_name = args[0]
                     self.take(item_name)
                 elif command == 'drop' and len(args) == 1:
                     item_name = args[0]
                     self.drop(item_name)
-                elif command == 'eat'and len(args) == 1:
+                elif command == 'eat' and len(args) == 1:
                     item_name = args[0]
                     self.eat(item_name)
                 elif command == 'inventory':
