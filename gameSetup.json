@@ -143,6 +143,159 @@
 			"room": "room10"
 			}
     },
+	"Features": {
+		"grand desk": {
+			"name": "Grand Desk",
+			"description": "A large wooden desk covered in nautical charts and papers.",
+			"room": "room1"
+			},
+		"faded portrait": {
+			"name": "Faded Portrait",
+			"description": "A haunting portrait of the ship's captain hanging on the wall.",
+			"room": "room1"
+			},
+		"porthole": {
+			"name": "Porthole",
+			"description": "A cracked window with a view of the underwater world.",
+			"room": "room1"
+			},
+		"dining table": {
+			"name": "Overturned Dining Table",
+			"description": "A table surrounded by overturned chairs and remnants of a last meal.",
+			"room": "room2"
+			},
+		"pots": {
+			"name": "Pots and Pans",
+			"description": "Rusty cooking utensils scattered across the room.",
+			"room": "room2"
+			},
+		"trapdoor": {
+			"name": "Trapdoor",
+			"description": "A seemingly normal part of the floor that, when stepped on, opens to reveal a hidden storage space.",
+			"room": "room2"
+			},
+		"waterwheel": {
+			"name": "Giant Waterwheel",
+			"description": "A massive, ancient waterwheel that players can interact with, potentially revealing a hidden chamber when turned in the right direction.",
+			"room": "room3"
+			},
+		"machinery": {
+			"name": "Corroded Machinery",
+			"description": "Massive and corroded engine machinery filling the room.",
+			"room": "room3"
+			},
+		"console": {
+			"name": "Sonar Console",
+			"description": "A sonar console with a display showing underwater structures. Players must interpret the sonar signals to uncover the location of hidden passages.",
+			"room": "room3"
+			},
+		"Cargo": {
+			"name": "Stacks of Cargo",
+			"description": "Wooden crates and barrels filled with mysterious items.",
+			"room": "room4"
+			},
+		"seaweed": {
+			"name": "Barnacles and Seaweed",
+			"description": "Covering the cargo, adding to the eerie atmosphere.",
+			"room": "room4"
+			},
+		"dim light": {
+			"name": "Dim Light",
+			"description": "Only occasional beams of light from damaged portholes.",
+			"room": "room4"
+			},
+		"nautical instruments": {
+			"name": "Nautical Instruments",
+			"description": "Navigation tools, including a shattered compass and an astrolabe.",
+			"room": "room5"
+			},
+		"maps": {
+			"name": "Torn Maps",
+			"description": "Maps and charts scattered across the room.",
+			"room": "room5"
+			},
+		"fish": {
+			"name": "Bioluminescent Fish",
+			"description": "Glowing fish visible through a shattered window.",
+			"room": "room5"
+			},
+		"beds": {
+			"name": "Bunk Beds",
+			"description": "Cramped sleeping quarters with tattered beddings.",
+			"room": "room6"
+			},
+		"personal belongings": {
+			"name": "Personal Belongings",
+			"description": "Scattered sailor uniforms, letters, and personal items.",
+			"room": "room6"
+			},
+		"diary drawer": {
+			"name": "Secret Diary Drawer",
+			"description": " A bunk bed with a drawer that only opens when a hidden button is pressed.",
+			"room": "room6"
+			},
+		"railings": {
+			"name": "Broken Railings",
+			"description": "Damaged safety railings, revealing the force of the ship's descent.",
+			"room": "room7"
+			},
+		"glass": {
+			"name": "Shattered Glass",
+			"description": "Broken windows providing a view of the underwater world.",
+			"room": "room7"
+			},
+		"view": {
+			"name": "Panoramic View",
+			"description": "A breathtaking view of the murky ocean floor.",
+			"room": "room7"
+			},
+		"medic": {
+			"name": "Rusty Medical Equipment",
+			"description": "Decaying medical tools and equipment.",
+			"room": "room8"
+			},
+		"bandages": {
+			"name": "Damp Bandages",
+			"description": "Waterlogged bandages and a somber atmosphere.",
+			"room": "room8"
+			},
+		"flickering lights": {
+			"name": "Flickering Lights",
+			"description": "Dim lights casting eerie shadows.",
+			"room": "room8"
+			},
+		"radio equipment": {
+			"name": "Old Radio Equipment",
+			"description": "Damaged radio transmitters and communication devices.",
+			"room": "room9"
+			},
+		"messages": {
+			"name": "Encoded Messages",
+			"description": "Scattered messages with hidden codes.",
+			"room": "room9"
+			},
+		"radio": {
+			"name": "Malfunctioning Radio",
+			"description": " Eerie static and occasional bursts of communication.",
+			"room": "room9"
+			},
+		"artifact": {
+			"name": "Valuable Artifacts",
+			"description": "Precious gems, ancient relics, and chests of gold and silver.",
+			"room": "room10"
+			},
+		"algae": {
+			"name": "Luminescent Algae",
+			"description": "Algae-covered treasures providing dim illumination.",
+			"room": "room10"
+			},
+		"hidden mechanisms": {
+			"name": "Hidden Mechanisms",
+			"description": "Pedestals and mechanisms that reveal secret passages when activated.",
+			"room": "room10"
+			}
+	},
+
     "Verbs": {
         "valid_commands": ["go", "look", "take", "grab", "pickup", "drop", "eat", "inventory","savegame","loadgame", "quit", "help", "lookat", "hide", "put", "jump", "unlock", "search", "open", "close", "read", "move","listen" ]
     }
