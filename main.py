@@ -476,7 +476,7 @@ class Gameplay:
         print("Exiting the game. Goodbye!")
 
     def display_help(self):
-        valid_commands = load_data('Commands').get('valid_commands', [])
+        valid_commands = load_data('Verbs').get('valid_commands', [])
         print("Available commands (verbs):", ', '.join(valid_commands))
 
     def play(self):
@@ -495,7 +495,7 @@ class Gameplay:
 
             if user_input == 'quit':
                 self.quit_game()
-                break
+                exit()
             elif user_input.split()[0] in valid_commands:
                 command, *args = user_input.split()
                 if command == 'go' and len(args) == 1:
@@ -516,7 +516,10 @@ class Gameplay:
                     item_name = args[0]
                     self.eat(item_name)
                 elif command == 'inventory':
-                    self.display_inventory()
+                    if self.inventory:
+                        self.display_inventory()
+                    else:
+                        print(f"{self.name}'s inventory is empty")
                 elif command == 'savegame':
                     self.save_game()
                 # elif command == 'loadgame':
