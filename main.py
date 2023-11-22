@@ -474,6 +474,7 @@ class Gameplay:
 
     def quit_game(self):
         print("Exiting the game. Goodbye!")
+        exit()
 
     def display_help(self):
         valid_commands = load_data('Verbs').get('valid_commands', [])
@@ -495,13 +496,13 @@ class Gameplay:
 
             if user_input == 'quit':
                 self.quit_game()
-                exit()
+
             elif user_input.split()[0] in valid_commands:
                 command, *args = user_input.split()
-                if command == 'go' and len(args) == 1:
+                if command in ['go', 'move'] and len(args) == 1:
                     direction = args[0]
                     self.go(direction)
-                elif command == 'lookat' and len(args) == 1:
+                elif command in ['lookat', 'inspect'] and len(args) == 1:
                     item_name = args[0]
                     self.look_at(item_name)
                 elif command == 'look':
@@ -509,7 +510,7 @@ class Gameplay:
                 elif command in ['take', 'pickup', 'grab'] and len(args) == 1:
                     item_name = args[0]
                     self.take(item_name)
-                elif command == 'drop' and len(args) == 1:
+                elif command in ['drop', 'leave', 'discard'] and len(args) == 1:
                     item_name = args[0]
                     self.drop(item_name)
                 elif command == 'eat' and len(args) == 1:
