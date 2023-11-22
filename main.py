@@ -492,7 +492,8 @@ class Gameplay:
 
         while True:
             user_input = input(
-                f"{self.name}, you are in {self.current_room}. Oxygen: {self.oxygen}%\nEnter a command (or 'quit' to exit): ")
+                f"{self.name}, you are in {self.current_room}. Oxygen: {self.oxygen}%\nEnter a command (or 'quit' to "
+                f"exit): ")
 
             if user_input == 'quit':
                 self.quit_game()
