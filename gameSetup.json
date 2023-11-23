@@ -20,7 +20,7 @@
         	},
         "room2": {
 			"short_description": "You're in the Gallery. The galley is a compact space filled with rusty pots, pans, and remnants of a once lively kitchen. A partially submerged dining table sits in the center, surrounded by overturned chairs. Dim light filters through a cracked porthole, revealing seaweed-covered surfaces and eerie shadows. The Gallery is connected to the Submerged Passage and Seaweed Veiled Passage in the north and the south…",
-			"log_description" : "As you step into the Galley, a sensory journey begins - the tang of saltwater, the creaking timbers, and the remnants of the last meal prepared aboard the ship. The room boasts a once bustling scene, now frozen in time. An overturned dining table, surrounded by chairs askew, bears the weight of a culinary history now coated in a layer of marine decay. Rusty pots and pans cling to their hooks, whispering tales of culinary adventures. Amidst the decay, a cracked porthole allows glimpses of the silent dance of bioluminescent fish outside, as if nature itself mourns the galley's former vibrancy. To the north, a Submerged Passage awaits, promising a journey through hidden depths. To the south, a Seaweed Veiled Passage beckons, its tendrils concealing the secrets of the next stage in the ship's mysterious narrative.",			"exits": {
+			"log_description" : "As you step into the Galley, a sensory journey begins - the tang of saltwater, the creaking timbers, and the remnants of the last meal prepared aboard the ship. The room boasts a once bustling scene, now frozen in time. An overturned dining table, surrounded by chairs askew, bears the weight of a culinary history now coated in a layer of marine decay. Rusty pots and pans cling to their hooks, whispering tales of culinary adventures. Amidst the decay, a cracked porthole allows glimpses of the silent dance of bioluminescent fish outside, as if nature itself mourns the galley's former vibrancy. To the north, a Submerged Passage awaits, promising a journey through hidden depths. To the south, a Seaweed Veiled Passage beckons, its tendrils concealing the secrets of the next stage in the ship's mysterious narrative.",
 			"exits":{
 				"north": {
 					"name": "room5",
@@ -139,14 +139,15 @@
 				}
         	},
         "room10": {
-            "short_description": "You made it to the treasure room. Deep within the bowels of the ship, you stumble upon a hidden chamber filled with the ship's precious cargo. Mysterious artifacts, chests of gold and silver, and ancient relics are strewn about. The room is dimly lit by the soft glow of luminescent algae clinging to the treasures, creating an otherworldly spectacle in the sunken darkness. You may go to the south from here, the Dank Portal but you can also escape!!",
-            "long_description": "Deep within the bowels of the ship lies the Treasure Room, a clandestine chamber filled with the remnants of wealth and glory. Ancient relics, chests of gold and silver, and precious jewels stand as silent witnesses to the ship's former majesty. Luminescent algae, clinging to the treasures like a guardian's embrace, bathes the room in a mystical glow. As players navigate this final sanctuary, they unravel the final mysteries of the ship, perhaps realizing that true treasure lies not in gold, but in the stories woven into the fabric of the sunken vessel. To the south, a Dank Portal beckons, its entrance shrouded in mystery, leading players to the next phase of their enigmatic journey.",
-			"exits":{
+			"short_description": "You made it to the treasure room. Deep within the bowels of the ship, you stumble upon a hidden chamber filled with the ship's precious cargo. Mysterious artifacts, chests of gold and silver, and ancient relics are strewn about. The room is dimly lit by the soft glow of luminescent algae clinging to the treasures, creating an otherworldly spectacle in the sunken darkness. You may go to the south from here, the Dank Portal but you can also escape!!",
+			"long_description": "Deep within the bowels of the ship lies the Treasure Room, a clandestine chamber filled with the remnants of wealth and glory. Ancient relics, chests of gold and silver, and precious jewels stand as silent witnesses to the ship's former majesty. Luminescent algae, clinging to the treasures like a guardian's embrace, bathes the room in a mystical glow. As players navigate this final sanctuary, they unravel the final mysteries of the ship, perhaps realizing that true treasure lies not in gold, but in the stories woven into the fabric of the sunken vessel. To the south, a Dank Portal beckons, its entrance shrouded in mystery, leading players to the next phase of their enigmatic journey.",
+			"exits": {
 				"north": {
 					"name": "room9",
 					"door": "Dank Portal"
-					}
 				}
+			}
+		}
     },
     "Objects": {
         "key": {
