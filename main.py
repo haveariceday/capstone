@@ -409,15 +409,21 @@ class Gameplay:
         exits = self.rooms_data.get(self.current_room, {}).get('exits', {})
 
         if direction in exits:
-            new_room = exits[direction]
+            new_room = exits[direction]['name']
             print(f"{self.name} is moving {direction} to {new_room}.")
             self.current_room = new_room
-            self.look()
+            entered_already = self.rooms_data.get(self.current_room, {}).get('entered_already')
+            if entered_already == "False":
+                self.look()
+                self.rooms_data[self.current_room]['entered_already'] = True
+            else:
+                short_description = self.rooms_data.get(self.current_room,{}).get('short_description')
+                print(short_description)
         else:
             print(f"There is no exit in the {direction} direction.")
 
     def look(self):
-        room_description = self.rooms_data.get(self.current_room, {}).get('description', {})
+        room_description = self.rooms_data.get(self.current_room, {}).get('long_description', {})
         print(room_description)
 
     def look_at(self, item_name):
@@ -489,7 +495,8 @@ class Gameplay:
 
         # if not self.load_game_state():
         self.get_player_name()
-
+        current_room = self.current_room
+        self.look()
         while True:
             user_input = input(
                 f"{self.name}, you are in {self.current_room}. Oxygen: {self.oxygen}%\nEnter a command (or 'quit' to "
