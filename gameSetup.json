@@ -5,18 +5,12 @@
             "short_description": "You're in the Captain's Quarters. The captain's quarters are adorned with remnants of opulence, now weathered and waterlogged. A grand wooden desk sits at one end, scattered with nautical charts and an old captain's log. A faded portrait of the ship's captain hangs on the damp wall, its eyes seemingly following your every move. There are paths ways to the north, west, and east from the Quarters",
             "long_description": "The Captain's Quarters exude an air of faded opulence, a once-grand chamber now steeped in the melancholy of the sea. The room centers around a massive wooden desk, adorned with navigational charts, ink-stained parchment, and a forgotten captain's log. A hauntingly detailed portrait of the ship's commander watches over, the captain's eyes seemingly following every move. In the subdued glow of a dim, flickering lantern, the room tells tales of a bygone era, with hidden compartments waiting to divulge the secrets of the ship's final voyage. To the north, a Forgotten Corridor beckons, leading to mysteries yet uncovered. To the west, a Whispering Pantry awaits in the Galley, echoing with the whispers of culinary secrets. To the east, a Celestial Staircase ascends, marked with constellations, inviting you to explore the ethereal realms of the ship.",
 			"exits": {
-				"north": {
-					"name": "room3",
-					"door": "Forgotten Corridor"
-					},
-				"west": {
-					"name": "room2",
-					"door": "Whispering Pantry"
-					},
-				"east": {
-					"name": "room4",
-					"door": "Celestial Staircase"
-					}
+				"north": "room3",
+				"forgotten corridor": "room3",
+				"west":   "room2",
+				"Whispering Pantry":"room2",
+				"east": "room4",
+				"Celestial Staircase": "room4"
 				}
         	},
         "room2": {

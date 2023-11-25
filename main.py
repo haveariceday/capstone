@@ -406,10 +406,13 @@ class Gameplay:
         self.name = input("Enter your name: ")
 
     def go(self, direction):
-        exits = self.rooms_data.get(self.current_room, {}).get('exits', {})
+        #Make go able to be used without keyword go, if a direction or exit is
+        #described
+        #
+        exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
 
         if direction in exits:
-            new_room = exits[direction]['name']
+            new_room = self.rooms_data.get(self.current_room, {}).get('exits', {}).get(direction)
             print(f"{self.name} is moving {direction} to {new_room}.")
             self.current_room = new_room
             entered_already = self.rooms_data.get(self.current_room, {}).get('entered_already')
@@ -505,9 +508,11 @@ class Gameplay:
             if user_input == 'quit':
                 self.quit_game()
 
+            # if user_input in self.rooms_data.get(self.current_room, {}).get('exits', {})
+
             elif user_input.split()[0] in valid_commands:
                 command, *args = user_input.split()
-                if command in ['go', 'move'] and len(args) == 1:
+                if command in ['go', 'move']:
                     direction = args[0]
                     self.go(direction)
                 elif command in ['lookat', 'inspect'] and len(args) == 1:
