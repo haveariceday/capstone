@@ -495,7 +495,7 @@ class Gameplay:
 
     def parse_user_input(self):
         valid_commands = load_data('Verbs').get('valid_commands', [])
-
+        exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
         # if not self.load_game_state():
         self.get_player_name()
         current_room = self.current_room
@@ -509,7 +509,8 @@ class Gameplay:
                 self.quit_game()
 
             # if user_input in self.rooms_data.get(self.current_room, {}).get('exits', {})
-
+            if user_input in exits:
+                self.go(user_input)
             elif user_input.split()[0] in valid_commands:
                 command, *args = user_input.split()
                 if command in ['go', 'move']:
