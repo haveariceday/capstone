@@ -6,4 +6,11 @@ Project Mission:
         A real bare bones idea is to envision a 'train car' like game where a player should only move in one direction
         but is technically allowed to move both directions. No items, just moving through the rooms.
 
-   Next Step:
+11/27 next step:
+
+
+hide objects room field if proper feature not lookat yet
+
+add game field to feature IF it has a mini game attached.
+
+add requiredItems field as a list maybe, to game dictionary
