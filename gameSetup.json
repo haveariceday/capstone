@@ -332,7 +332,7 @@
 			"name": "Panoramic View",
 			"description": "A breathtaking view of the murky ocean floor.",
 			"room": "room7",
-			"game": ,
+			"game": "scramble",
 			"required_item": ["binoclular"]
 			},
 		"medic": {
