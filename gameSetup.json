@@ -181,9 +181,9 @@
 			"description": "A sample of the algae outside, which might be used to illuminate dark areas.",
 			"room": "room7"
 			},
-		"binoclulars": {
-			"name": "Binoculars",
-			"description": "Functional binoculars that help players spot distant clues.",
+		"binoclular": {
+			"name": "Binocular",
+			"description": "Functional binocular that helps players spot distant clues.",
 			"room": "room7"
 			},
 		"firstaid": {
@@ -246,12 +246,16 @@
 		"trapdoor": {
 			"name": "Trapdoor",
 			"description": "A seemingly normal part of the floor that, when stepped on, opens to reveal a hidden storage space.",
-			"room": "room2"
+			"room": "room2",
+			"game": "scramble_word",
+			"required_item": ["diary"]
 			},
 		"waterwheel": {
 			"name": "Giant Waterwheel",
 			"description": "A massive, ancient waterwheel that players can interact with, potentially revealing a hidden chamber when turned in the right direction.",
-			"room": "room3"
+			"room": "room3",
+			"game": "wordle",
+			"required_item": ["wrench","blueprint"]
 			},
 		"machinery": {
 			"name": "Corroded Machinery",
@@ -266,7 +270,9 @@
 		"crates": {
 			"name": "Crates",
 			"description": "Wooden crates and barrels filled with mysterious items.",
-			"room": "room4"
+			"room": "room4",
+			"game": "air_tank_riddle",
+			"required_item": []
 			},
 		"seaweed": {
 			"name": "Barnacles and Seaweed",
@@ -286,7 +292,9 @@
 		"maps": {
 			"name": "Torn Maps",
 			"description": "Maps and charts scattered across the room.",
-			"room": "room5"
+			"room": "room5",
+			"game": "scramble_word",
+			"required_item": ["needle"]
 			},
 		"compass": {
 			"name": "Shattered Compass",
@@ -306,7 +314,9 @@
 		"diary drawer": {
 			"name": "Secret Diary Drawer",
 			"description": " A bunk bed with a drawer that only opens when a hidden button is pressed.",
-			"room": "room6"
+			"room": "room6",
+			"game": "wordle",
+			"required_item": []
 			},
 		"railings": {
 			"name": "Broken Railings",
@@ -321,7 +331,9 @@
 		"view": {
 			"name": "Panoramic View",
 			"description": "A breathtaking view of the murky ocean floor.",
-			"room": "room7"
+			"room": "room7",
+			"game": ,
+			"required_item": ["binoclular"]
 			},
 		"medic": {
 			"name": "Rusty Medical Equipment",
@@ -331,7 +343,9 @@
 		"bandages": {
 			"name": "Damp Bandages",
 			"description": "Waterlogged bandages and a somber atmosphere.",
-			"room": "room8"
+			"room": "room8",
+			"game": "air_tank_riddle",
+			"required_item": []
 			},
 		"flickering lights": {
 			"name": "Flickering Lights",
@@ -341,7 +355,9 @@
 		"radio equipment": {
 			"name": "Old Radio Equipment",
 			"description": "Damaged radio transmitters and communication devices.",
-			"room": "room9"
+			"room": "room9",
+			"game": "scramble_word",
+			"required_item": ["message"]
 			},
 		"messages": {
 			"name": "Encoded Messages",
