@@ -504,8 +504,19 @@ class Gameplay:
 
     def play(self, game):
         def choose_random_word():
-            word_list = ["chest", "skull", "sword", "storm"]
+            word_list = ["chest", "skull", "sword", "storm", "ocean", "abyss"]
             return random.choice(word_list)
+
+        def choose_hint(word):
+            hints = {
+                "chest": "This 5 letter word is associated with the upper part of your body ... It can also be related to a piece of furniture.",
+                "skull": "This 5 letter word can protect your head especially your brain. What would it be?",
+                "sword": "This 5 letter word is a weapon that was used in ancient times.",
+                "storm": "This 5 letter word is a type of weather that you see when it rains.",
+                "ocean": "This 5 letter word is a home to diverse rage of life and divided into zones like the abyssal and pelagic. What am I? ",
+                "abyss": "refers to a deep and seemingly bottomless chasm or hole, often used metaphorically to describe a profound or infinite depth."
+            }
+            return hints[word]
 
         def get_guess():
             while True:
@@ -518,6 +529,16 @@ class Gameplay:
         def evaluate_guess(hidden_word, guess):
             if guess == hidden_word:
                 return "You guessed the word! Congratulations!"
+            feedback = []
+            for i in range(5):
+                if guess[i] == hidden_word[i]:
+                    feedback.append(guess[i])
+                elif guess[i] in hidden_word:
+                    feedback.append("O")
+                else:
+                    feedback.append(".")
+
+            return " ".join(feedback)
 
         if game == "air_tank_riddle":
             pass
@@ -540,9 +561,11 @@ class Gameplay:
 
         elif game == "wordle":
             hidden_word = choose_random_word()
+            hint = choose_hint(hidden_word)
             attempts = 6
 
-            print("Welcome to Wordle! You have 6 attempts to guess two letters to complete a word.")
+            print("Welcome to Wordle! You have 6 chances to guess a randomly selected five-letter word.")
+            print(hint)
 
             for attempt in range(1, attempts + 1):
                 print(f"Attempt {attempt}:")
