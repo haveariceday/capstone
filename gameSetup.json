@@ -226,7 +226,9 @@
 		"faded portrait": {
 			"name": "Faded Portrait",
 			"description": "A haunting portrait of the ship's captain hanging on the wall.",
-			"room": "room1"
+			"room": "room1",
+			"game": "wordle",
+			"required_item": ["key"]
 			},
 		"porthole": {
 			"name": "Porthole",
