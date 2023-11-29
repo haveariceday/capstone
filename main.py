@@ -359,7 +359,7 @@
 
 import json
 import os
-
+import random
 
 def load_data(data_type):
     with open('gameSetup.json', 'r') as file:
@@ -502,10 +502,46 @@ class Gameplay:
         print("Available commands (verbs):", ', '.join(valid_commands))
 
     def play(self, game):
-        # Placeholder for the 'play' command logic
-        pass
+        def choose_random_word():
+            word_list = ["chest", "skull", "sword", "storm"]
+            return random.choice(word_list)
 
-    def parse_user_input(self,sameRoom = False):
+        def get_guess():
+            while True:
+                    guess = input("Enter your 5-letter word guess: ").lower()
+                    if len(guess) == 5 and guess.isalpha():
+                        return guess
+                    else:
+                        print("Please enter a valid 5-letter word.")
+
+        def evaluate_guess(hidden_word, guess):
+            if guess == hidden_word:
+                return "You guessed the word! Congratulations!"
+
+        if game == "air_tank_riddle":
+            pass
+        elif game == "scramble_word":
+            pass
+        elif game == "wordle":
+            hidden_word = choose_random_word()
+            attempts = 6
+
+            print("Welcome to Wordle! You have 6 attempts to guess two letters to complete a word.")
+
+            for attempt in range(1, attempts + 1):
+                print(f"Attempt {attempt}:")
+                guess = get_guess()
+                result = evaluate_guess(hidden_word, guess)
+                print(result)
+
+                if result == "You guessed the word! Congratulations!":
+                    break
+                if attempt == attempts + 1:
+                    print(f"Sorry, you're out of attempts. The word was '{hidden_word}'.")
+        else:
+            print("error")
+
+    def parse_user_input(self, sameRoom = False):
         valid_commands = load_data('Verbs').get('valid_commands', [])
         exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
         # if not self.load_game_state():
@@ -561,4 +597,4 @@ class Gameplay:
 
 # Example usage:
 game = Gameplay()
-game.parse_user_input()
+game.play("wordle")

@@ -388,7 +388,8 @@
 
     "Verbs": {
         "valid_commands": ["go", "look", "take", "grab", "pickup", "drop", "eat", "inventory","savegame","loadgame", "quit", "help", "lookat", "hide", "put", "jump", "unlock", "search", "open", "close", "read", "move","listen" ]
-    }
+    },
+	"Words": ["chest", "skull", "sword", "storm"]
 }
 
 
