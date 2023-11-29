@@ -378,6 +378,7 @@ class Gameplay:
         self.objects_data = load_data('Objects')
         self.verbs_data = load_data('Verbs')
         self.features_data = load_data('Features')
+        self.words_data = load_data('Words')
 
     # def load_game_state(self, filename='saved_game.json'):
     #     if os.path.exists(filename):
@@ -521,7 +522,22 @@ class Gameplay:
         if game == "air_tank_riddle":
             pass
         elif game == "scramble_word":
-            pass
+            original_word = random.choice(load_data('Words')).upper()
+            print(original_word)
+            scrambled_word = list(original_word)
+            random.shuffle(scrambled_word)
+            scrambled = ''.join(scrambled_word)
+
+            print(f"Unscramble the following word:")
+            print(scrambled)
+
+            player_guess = input("Your guess: ")
+
+            if player_guess.upper() == original_word:
+                print("Correct! You unscrambled the word.")
+            else:
+                print("Incorrect. Try again.")
+
         elif game == "wordle":
             hidden_word = choose_random_word()
             attempts = 6
@@ -597,4 +613,4 @@ class Gameplay:
 
 # Example usage:
 game = Gameplay()
-game.play("wordle")
+game.play("scramble_word")
