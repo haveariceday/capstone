@@ -391,7 +391,30 @@
     "Verbs": {
         "valid_commands": ["go", "look", "take", "grab", "pickup", "drop", "eat", "inventory","savegame","loadgame", "quit", "help", "lookat", "hide", "put", "jump", "unlock", "search", "open", "close", "read", "move","listen" ]
     },
-	"Words": ["chest", "skull", "sword", "storm"]
+	"Words": ["chest", "skull", "sword", "storm"],
+	"Riddles": {
+                "Riddle 1": {
+                    "riddle": "A treasure sought by pirates bold,\nBuried deep in sand and gold.\n'X' marks the spot, a map to guide,\nWhere is this chest of wealth and pride?",
+                    "answer": "Treasure chest"
+                },
+                "Riddle 2": {
+                    "riddle": "Upon the waves, a ship I steer,\nA skull and bones flag, a sight of fear.\nMy crew and I sail, seeking the loot,\nWhat am I, the terror of the route?",
+                    "answer": "Pirate ship"
+                },
+                "Riddle 3": {
+                    "riddle": "With a peg leg and eye patch, I roam,\nSearching for treasures and tales to be known.\nIn tales of the sea, I'm a legend renowned,\nWho am I, with a parrot and a hound?",
+                    "answer": "Pirate captain"
+                },
+                "Riddle 4": {
+                    "riddle": "An island hideout, a pirate's reprieve,\nCaves and coves where secrets weave.\nWhispers of gold and maps are shared,\nWhat place is this, where pirate legends dared?",
+                    "answer": "Secret island"
+                },
+                "Riddle 5": {
+                    "riddle": "Through storms and calms, my compass true,\nGuiding to riches, the old and the new.\nI point to fortune, adventure untold,\nWhat instrument am I, made of metal and bold?",
+                    "answer": "Compass"
+                }
+            }
+
 }
 
 

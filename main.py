@@ -379,6 +379,7 @@ class Gameplay:
         self.verbs_data = load_data('Verbs')
         self.features_data = load_data('Features')
         self.words_data = load_data('Words')
+        self.riddles_data = load_data('Riddles')
 
     # def load_game_state(self, filename='saved_game.json'):
     #     if os.path.exists(filename):
@@ -541,7 +542,24 @@ class Gameplay:
             return " ".join(feedback)
 
         if game == "air_tank_riddle":
-            pass
+
+            # Select a random riddle
+            random_riddle_name = random.choice(list(self.riddles_data.keys()))
+            selected_riddle = self.riddles_data[random_riddle_name]
+
+            # Display the riddle and get player's answer
+            print(selected_riddle["riddle"])
+            user_answer = input("Your answer: ")
+
+            # Check if the answer is correct
+            if user_answer.lower() == selected_riddle["answer"].lower():
+                print("Correct! Your oxygen level increases by 5.")
+                # player["oxygen_level"] += 5
+            else:
+                print("Incorrect. Your oxygen level decreases by 2.")
+                # player["oxygen_level"] -= 2
+
+
         elif game == "scramble_word":
             original_word = random.choice(load_data('Words')).upper()
             print(original_word)
@@ -636,4 +654,4 @@ class Gameplay:
 
 # Example usage:
 game = Gameplay()
-game.play("scramble_word")
+game.play("air_tank_riddle")
