@@ -176,12 +176,12 @@
 			"description": "A photograph depicting the ship's crew, possibly providing hints about their relationships.",
 			"room": "room6"
 			},
-		"algea": {
+		"algae": {
 			"name": "Bioluminescent Algae Sample",
 			"description": "A sample of the algae outside, which might be used to illuminate dark areas.",
 			"room": "room7"
 			},
-		"binoclular": {
+		"binocular": {
 			"name": "Binocular",
 			"description": "Functional binocular that helps players spot distant clues.",
 			"room": "room7"
@@ -333,7 +333,7 @@
 			"description": "A breathtaking view of the murky ocean floor.",
 			"room": "room7",
 			"game": "scramble",
-			"required_item": ["binoclular"]
+			"required_item": ["binocular"]
 			},
 		"medic": {
 			"name": "Rusty Medical Equipment",

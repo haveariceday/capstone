@@ -377,6 +377,7 @@ class Gameplay:
         self.rooms_data = load_data('Rooms')
         self.objects_data = load_data('Objects')
         self.verbs_data = load_data('Verbs')
+        self.features_data = load_data('Features')
 
     # def load_game_state(self, filename='saved_game.json'):
     #     if os.path.exists(filename):
@@ -430,10 +431,19 @@ class Gameplay:
         print(room_description)
 
     def look_at(self, item_name):
-        if item_name in self.inventory or self.objects_data.get(item_name, {}).get('room') == self.current_room:
+        if item_name in self.inventory:
             item_description = self.objects_data.get(item_name, {}).get('description')
             print(item_description)
-
+        elif self.features_data.get(item_name, {}).get('room') == self.current_room:
+            feature_description = self.features_data.get(item_name, {}).get('description')
+            print(feature_description)
+            #logic for playing games?
+            game = self.features_data.get(item_name,{}).get('game')
+            required_items = self.features_data.get(item_name,{}).get('required_item')
+            if game:
+                answer = input(f"play {game}(yes/no)?")
+                if answer == 'yes':
+                    self.play(game)
     def drop(self, item_name):
         if item_name in self.inventory:
             item = self.objects_data.get(item_name, {})
@@ -489,7 +499,7 @@ class Gameplay:
         valid_commands = load_data('Verbs').get('valid_commands', [])
         print("Available commands (verbs):", ', '.join(valid_commands))
 
-    def play(self):
+    def play(self, game):
         # Placeholder for the 'play' command logic
         pass
 
@@ -516,9 +526,8 @@ class Gameplay:
                 if command in ['go', 'move']:
                     direction = args[0]
                     self.go(direction)
-                elif command in ['lookat', 'inspect'] and len(args) == 1:
-                    item_name = args[0]
-                    self.look_at(item_name)
+                elif command in ['lookat', 'inspect']:
+                    self.look_at(" ".join(args))
                 elif command == 'look':
                     self.look()
                 elif command in ['take', 'pickup', 'grab'] and len(args) == 1:
