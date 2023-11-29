@@ -370,7 +370,7 @@ def load_data(data_type):
 
 class Gameplay:
     def __init__(self):
-        self.name = ""
+        self.name = input("Enter your name: ")
         self.current_room = "room1"
         self.oxygen = 100
         self.inventory = []
@@ -403,12 +403,10 @@ class Gameplay:
     #     else:
     #         return False
 
-    def get_player_name(self):
-        self.name = input("Enter your name: ")
 
     def go(self, direction):
-        #Make go able to be used without keyword go, if a direction or exit is
-        #described
+        # Make go able to be used without keyword go, if a direction or exit is
+        # described
         #
         exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
 
@@ -421,7 +419,7 @@ class Gameplay:
                 self.look()
                 self.rooms_data[self.current_room]['entered_already'] = True
             else:
-                short_description = self.rooms_data.get(self.current_room,{}).get('short_description')
+                short_description = self.rooms_data.get(self.current_room, {}).get('short_description')
                 print(short_description)
         else:
             print(f"There is no exit in the {direction} direction.")
@@ -437,13 +435,17 @@ class Gameplay:
         elif self.features_data.get(item_name, {}).get('room') == self.current_room:
             feature_description = self.features_data.get(item_name, {}).get('description')
             print(feature_description)
-            #logic for playing games?
-            game = self.features_data.get(item_name,{}).get('game')
-            required_items = self.features_data.get(item_name,{}).get('required_item')
+            # logic for playing games?
+            game = self.features_data.get(item_name, {}).get('game')
+            required_items = self.features_data.get(item_name, {}).get('required_item')
             if game:
+                for item in required_items:
+                    if item not in self.inventory:
+                        self.parse_user_input(True)
                 answer = input(f"play {game}(yes/no)?")
                 if answer == 'yes':
                     self.play(game)
+
     def drop(self, item_name):
         if item_name in self.inventory:
             item = self.objects_data.get(item_name, {})
@@ -503,13 +505,13 @@ class Gameplay:
         # Placeholder for the 'play' command logic
         pass
 
-    def parse_user_input(self):
+    def parse_user_input(self,sameRoom = False):
         valid_commands = load_data('Verbs').get('valid_commands', [])
         exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
         # if not self.load_game_state():
-        self.get_player_name()
-        current_room = self.current_room
-        self.look()
+        # self.get_player_name()
+        if not sameRoom:
+            self.look()
         while True:
             user_input = input(
                 f"{self.name}, you are in {self.current_room}. Oxygen: {self.oxygen}%\nEnter a command (or 'quit' to "
@@ -550,8 +552,6 @@ class Gameplay:
                 #     self.load_game_state()
                 elif command == 'help':
                     self.display_help()
-                elif command == 'play':
-                    self.play()
                 # Add more commands as needed
                 else:
                     print("Error: Invalid command format.")
