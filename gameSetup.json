@@ -413,7 +413,17 @@
                     "riddle": "Through storms and calms, my compass true,\nGuiding to riches, the old and the new.\nI point to fortune, adventure untold,\nWhat instrument am I, made of metal and bold?",
                     "answer": "Compass"
                 }
-            }
+            },
+
+	"Wordle_words": ["chest", "skull", "sword", "storm", "ocean", "abyss"],
+	"Wordle_hint": {
+				"chest": "This 5 letter word is associated with the upper part of \nyour body ... It can also be related to a piece of furniture.",
+				"skull": "This 5 letter word can protect your head especially your \nbrain. What would it be?",
+				"sword": "This 5 letter word is a weapon that was used in ancient \ntimes.",
+				"storm": "This 5 letter word is a type of weather that you see when\n it rains.",
+				"ocean": "This 5 letter word is a home to diverse rage of life and\n divided into zones like the abyssal and pelagic. What am I? ",
+				"abyss": "refers to a deep and seemingly bottomless chasm or hole,\n often used metaphorically to describe a profound or infinite depth."
+	}
 
 }
 
