@@ -26,6 +26,7 @@ class Gameplay:
         self.riddles_data = load_data('Riddles')
         self.wordle_data = load_data('Wordle_words')
         self.wordle_hint_data = load_data('Wordle_hint')
+        self.help_data = load_data('Help')
 
     # def load_game_state(self, filename='saved_game.json'):
     #     if os.path.exists(filename):
@@ -80,6 +81,9 @@ class Gameplay:
         if item_name in self.inventory:
             item_description = self.objects_data.get(item_name, {}).get('description')
             print(item_description)
+        elif self.objects_data.get(item_name, {}).get('room') == self.current_room:
+            object_description = self.objects_data.get(item_name, {}).get('description')
+            print(object_description)
         elif self.features_data.get(item_name, {}).get('room') == self.current_room:
             feature_description = self.features_data.get(item_name, {}).get('description')
             print(feature_description)
@@ -119,12 +123,21 @@ class Gameplay:
             print(f"{self.name}, there is no {item_name} in the game.")
 
     def eat(self, item_name):
-        if item_name in self.inventory:
+        if item_name in self.inventory and self.objects_data.get(item_name).get('edible') == "yes":
             self.inventory.remove(item_name)
-            print(f"{self.name} ate the {item_name}. It disappears from your inventory.")
+            self.oxygen += 2
+            print(f"{self.name} ate the {item_name}. It disappears from your inventory.\nYou gained 2 oxygen percent.")
+        elif item_name in self.inventory:
+            print(f"{self.name}, {item_name} is not edible")
         else:
-            print(f"{self.name}, you don't have {item_name} in your inventory.")
+            print(f"{self.name}, you don't have {item_name} in your inventory. \nPlease take the item first.")
 
+    def read(self, item_name):
+        if self.objects_data.get(item_name).get('readable') == "yes":
+            hint = self.objects_data.get(item_name).get('hint')
+            print(hint)
+        else:
+            print(f"{item_name} cannot be read...")
     def display_inventory(self):
         print(f"{self.name}'s Inventory: {', '.join(self.inventory)}")
 
@@ -146,24 +159,14 @@ class Gameplay:
         exit()
 
     def display_help(self):
-        valid_commands = load_data('Verbs').get('valid_commands', [])
-        print("Available commands (verbs):", ', '.join(valid_commands))
+        print("Available Commands")
+        for key in self.help_data:
+            print(self.help_data[key])
 
     def play(self, game):
         def choose_random_word():
             word = random.choice(load_data('Wordle_words'))
             return word
-
-        def choose_hint(word):
-            hints = {
-                "chest": "This 5 letter word is associated with the upper part of your body ... It can also be related to a piece of furniture.",
-                "skull": "This 5 letter word can protect your head especially your brain. What would it be?",
-                "sword": "This 5 letter word is a weapon that was used in ancient times.",
-                "storm": "This 5 letter word is a type of weather that you see when it rains.",
-                "ocean": "This 5 letter word is a home to diverse rage of life and divided into zones like the abyssal and pelagic. What am I? ",
-                "abyss": "refers to a deep and seemingly bottomless chasm or hole, often used metaphorically to describe a profound or infinite depth."
-            }
-            return hints[word]
 
         def get_guess():
             while True:
@@ -200,10 +203,10 @@ class Gameplay:
             # Check if the answer is correct
             if user_answer.lower() == selected_riddle["answer"].lower():
                 print("Correct! Your oxygen level increases by 5.")
-                # player["oxygen_level"] += 5
+                #player["oxygen_level"] += 5
             else:
                 print("Incorrect. Your oxygen level decreases by 2.")
-                # player["oxygen_level"] -= 2
+                #player["oxygen_level"] -= 2
 
 
         elif game == "scramble_word":
@@ -264,22 +267,25 @@ class Gameplay:
                 self.go(user_input)
             elif user_input.split()[0] in valid_commands:
                 command, *args = user_input.split()
-                if command in ['go', 'move']:
+                if command in ['go', 'move', 'jump']:
                     direction = args[0]
                     self.go(direction)
                 elif command in ['lookat', 'inspect']:
                     self.look_at(" ".join(args))
                 elif command == 'look':
                     self.look()
-                elif command in ['take', 'pickup', 'grab'] and len(args) == 1:
+                elif command in ['take', 'pickup', 'grab', 'collect'] and len(args) == 1:
                     item_name = args[0]
                     self.take(item_name)
-                elif command in ['drop', 'leave', 'discard'] and len(args) == 1:
+                elif command in ['drop', 'leave', 'discard', 'put'] and len(args) == 1:
                     item_name = args[0]
                     self.drop(item_name)
                 elif command == 'eat' and len(args) == 1:
                     item_name = args[0]
                     self.eat(item_name)
+                elif command == 'read' and len(args) == 1:
+                    item_name = args[0]
+                    self.read(item_name)
                 elif command == 'inventory':
                     if self.inventory:
                         self.display_inventory()
@@ -300,5 +306,5 @@ class Gameplay:
 
 # Example usage:
 game = Gameplay()
-#game.parse_user_input()
-game.play("wordle")
+game.parse_user_input()
+#game.play("wordle")
