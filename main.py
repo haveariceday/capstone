@@ -250,6 +250,8 @@ class Gameplay:
     def parse_user_input(self, sameRoom = False):
         valid_commands = load_data('Verbs').get('valid_commands', [])
         exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
+        objects = list(self.objects_data.keys())
+        features = list(self.features_data.keys())
         # if not self.load_game_state():
         # self.get_player_name()
         if not sameRoom:
@@ -266,9 +268,16 @@ class Gameplay:
             if user_input in exits:
                 self.go(user_input)
             elif user_input.split()[0] in valid_commands:
-                #command, *args = user_input.split()
+                # command, *args = user_input.split()
+                # while args[0] in load_data("Banned_prepositions"):
+                #     del args[0]
+                # args = " ".join(args)
                 command = user_input.split(' ',1)[0]
                 args = user_input.split(' ',1)[1]
+                while args not in exits and features and objects:
+                    args = args.split()
+                    del args[0]
+                    args = " ".join(args)
                 if command in ['go', 'move', 'jump']:
                     self.go(args)
                 elif command in ['lookat', 'inspect']:
