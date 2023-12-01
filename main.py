@@ -266,16 +266,17 @@ class Gameplay:
             if user_input in exits:
                 self.go(user_input)
             elif user_input.split()[0] in valid_commands:
-                command, *args = user_input.split()
+                #command, *args = user_input.split()
+                command = user_input.split(' ',1)[0]
+                args = user_input.split(' ',1)[1]
                 if command in ['go', 'move', 'jump']:
-                    direction = args[0]
-                    self.go(direction)
+                    self.go(args)
                 elif command in ['lookat', 'inspect']:
                     self.look_at(" ".join(args))
                 elif command == 'look':
                     self.look()
-                elif command in ['take', 'pickup', 'grab', 'collect'] and len(args) == 1:
-                    item_name = args[0]
+                elif command in ['take', 'pickup', 'grab', 'collect']:
+                    item_name = args
                     self.take(item_name)
                 elif command in ['drop', 'leave', 'discard', 'put'] and len(args) == 1:
                     item_name = args[0]
@@ -293,11 +294,11 @@ class Gameplay:
                         print(f"{self.name}'s inventory is empty")
                 elif command == 'savegame':
                     self.save_game()
-                # elif command == 'loadgame':
-                #     self.load_game_state()
+                elif command == 'loadgame':
+                    self.load_game_state()
                 elif command == 'help':
                     self.display_help()
-                # Add more commands as needed
+                #Add more commands as needed
                 else:
                     print("Error: Invalid command format.")
             else:
