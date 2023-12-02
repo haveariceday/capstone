@@ -256,15 +256,11 @@ class Gameplay:
         if not sameRoom:
             self.look()
         while True:
-            self.oxygen -= 2
-            if self.oxygen < 1:
-                print("game over")
-                exit()
             exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
+            print(self.rooms_data.get(self.current_room, {}).get('summary'))
             user_input = input(
                 f"{self.name}, you are in {self.current_room}. Oxygen: {self.oxygen}%\nEnter a command (or 'quit' to "
-                f"exit): ").lower()
-
+                f"exit): ")
             if user_input == 'quit':
                 self.quit_game()
 
@@ -276,7 +272,7 @@ class Gameplay:
                 # command = user_input.split(' ',1)[0]
                 # args = user_input.split(' ',1)[1]
                 while " ".join(args) not in exits + objects + features:
-                    if not args:
+                    if args == []:
                         break
                     if args[0]:
                         del args[0]
@@ -291,14 +287,14 @@ class Gameplay:
                 elif command in ['take', 'pickup', 'grab', 'collect']:
                     item_name = args
                     self.take(item_name)
-                elif command in ['drop', 'leave', 'discard', 'put']:
-                    item_name = args
+                elif command in ['drop', 'leave', 'discard', 'put'] and len(args) == 1:
+                    item_name = args[0]
                     self.drop(item_name)
-                elif command == 'eat':
-                    item_name = args
+                elif command == 'eat' and len(args) == 1:
+                    item_name = args[0]
                     self.eat(item_name)
-                elif command == 'read':
-                    item_name = args
+                elif command == 'read' and len(args) == 1:
+                    item_name = args[0]
                     self.read(item_name)
                 elif command == 'inventory':
                     if self.inventory:
