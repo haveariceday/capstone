@@ -71,7 +71,7 @@ class Gameplay:
                 short_description = self.rooms_data.get(self.current_room, {}).get('short_description')
                 print(short_description)
         else:
-            print(f"There is no exit in the {direction} direction.")
+            print(f"There is no exit in that direction.")
 
     def look(self):
         room_description = self.rooms_data.get(self.current_room, {}).get('long_description', {})
@@ -249,12 +249,14 @@ class Gameplay:
 
     def parse_user_input(self, sameRoom = False):
         valid_commands = load_data('Verbs').get('valid_commands', [])
-        exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
+        objects = list(load_data('Objects').keys())
+        features = list(load_data('Features').keys())
         # if not self.load_game_state():
         # self.get_player_name()
         if not sameRoom:
             self.look()
         while True:
+            exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
             user_input = input(
                 f"{self.name}, you are in {self.current_room}. Oxygen: {self.oxygen}%\nEnter a command (or 'quit' to "
                 f"exit): ")
@@ -266,9 +268,16 @@ class Gameplay:
             if user_input in exits:
                 self.go(user_input)
             elif user_input.split()[0] in valid_commands:
-                #command, *args = user_input.split()
-                command = user_input.split(' ',1)[0]
-                args = user_input.split(' ',1)[1]
+                command, *args = user_input.split()
+                # command = user_input.split(' ',1)[0]
+                # args = user_input.split(' ',1)[1]
+                while " ".join(args) not in exits + objects + features:
+                    if args == []:
+                        break
+                    if args[0]:
+                        del args[0]
+
+                args = " ".join(args)
                 if command in ['go', 'move', 'jump']:
                     self.go(args)
                 elif command in ['lookat', 'inspect']:
