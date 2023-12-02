@@ -256,6 +256,10 @@ class Gameplay:
         if not sameRoom:
             self.look()
         while True:
+            self.oxygen -= 2
+            if self.oxygen < 1:
+                print("game over")
+                exit()
             exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
             user_input = input(
                 f"{self.name}, you are in {self.current_room}. Oxygen: {self.oxygen}%\nEnter a command (or 'quit' to "
