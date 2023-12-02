@@ -263,7 +263,7 @@ class Gameplay:
             exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
             user_input = input(
                 f"{self.name}, you are in {self.current_room}. Oxygen: {self.oxygen}%\nEnter a command (or 'quit' to "
-                f"exit): ")
+                f"exit): ").lower()
 
             if user_input == 'quit':
                 self.quit_game()
@@ -276,7 +276,7 @@ class Gameplay:
                 # command = user_input.split(' ',1)[0]
                 # args = user_input.split(' ',1)[1]
                 while " ".join(args) not in exits + objects + features:
-                    if args == []:
+                    if not args:
                         break
                     if args[0]:
                         del args[0]
@@ -291,14 +291,14 @@ class Gameplay:
                 elif command in ['take', 'pickup', 'grab', 'collect']:
                     item_name = args
                     self.take(item_name)
-                elif command in ['drop', 'leave', 'discard', 'put'] and len(args) == 1:
-                    item_name = args[0]
+                elif command in ['drop', 'leave', 'discard', 'put']:
+                    item_name = args
                     self.drop(item_name)
-                elif command == 'eat' and len(args) == 1:
-                    item_name = args[0]
+                elif command == 'eat':
+                    item_name = args
                     self.eat(item_name)
-                elif command == 'read' and len(args) == 1:
-                    item_name = args[0]
+                elif command == 'read':
+                    item_name = args
                     self.read(item_name)
                 elif command == 'inventory':
                     if self.inventory:

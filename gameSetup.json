@@ -6,11 +6,11 @@
             "long_description": "The Captain's Quarters exude an air of faded opulence, \na once-grand chamber now steeped in the melancholy of the sea. The room centers\naround a massive wooden desk, adorned with navigational charts, ink-stained parchment,\nand a forgotten captain's log. A hauntingly detailed portrait of the ship's commander\nwatches over, the captain's eyes seemingly following every move. In the subdued glow\nof a dim, flickering lantern, the room tells tales of a bygone era, with hidden compartments\nwaiting to divulge the secrets of the ship's final voyage. To the north, a Forgotten Corridor\nbeckons, leading to mysteries yet uncovered. To the west, a Whispering Pantry awaits in the Galley,\nechoing with the whispers of culinary secrets. To the east, a Celestial Staircase ascends, \nmarked with constellations, inviting you to explore the ethereal realms of the ship.\n",
 			"exits": {
 				"north": "room3",
-				"Forgotten Corridor": "room3",
+				"forgotten corridor": "room3",
 				"west":   "room2",
-				"Whispering Pantry":"room2",
+				"whispering pantry":"room2",
 				"east": "room4",
-				"Celestial Staircase": "room4"
+				"celestial staircase": "room4"
 				}
         	},
         "room2": {
@@ -19,9 +19,9 @@
 			"long_description" : "As you step into the Galley, a sensory journey begins - \nthe tang of saltwater, the creaking timbers, and the remnants of \nthe last meal prepared aboard the ship. \nThe room boasts a once bustling scene, now frozen in time. \nAn overturned dining table, surrounded by chairs askew, \nbears the weight of a culinary history now coated in a layer of marine decay. \nRusty pots and pans cling to their hooks, whispering tales of \nculinary adventures. Amidst the decay, a cracked porthole allows \nglimpses of the silent dance of bioluminescent fish outside, \nas if nature itself mourns the galley's former vibrancy. To the north, a\n Submerged Passage awaits, promising a journey through hidden depths. \nTo the south, a Seaweed Veiled Passage beckons, its tendrils concealing the\n secrets of the next stage in the ship's mysterious narrative.\n",
 			"exits": {
 				"north": "room5",
-				"Submerged Passage": "room5",
+				"submerged passage": "room5",
 				"south":   "room1",
-				"Seaweed Veiled Passage":"room1"
+				"seaweed veiled passage":"room1"
 				}
         	},
         "room3": {
@@ -30,7 +30,7 @@
             "long_description": "Descending into the Engine Room feels like stepping into the mechanical \nheart of a sunken leviathan. Massive corroded machinery looms like silent sentinels, bearing\n witness to the ship's final descent into the abyss. Dim emergency lights cast eerie shadows on the intricate \nweb of pipes and gears. The air is thick with the scent of oil and saltwater, a tangible reminder of the relentless force of the ocean. Amidst the rhythmic creaking, \nplayers navigate the labyrinthine space, searching for clues amidst the \nechoes of the engine's last breaths. To the north, a Submerged Labyrinth beckons, \nits hidden pathways promising the next phase of the mysterious journey. \nTo the south, a Corroded Conduit leads to uncharted territories, shrouded in the secrets \nof the ship's enigmatic narrative.\n",
 			"exits": {
 				"north": "room6",
-				"Submerged Labyrinth": "room6",
+				"submerged labyrinth": "room6",
 				"south": "room1",
 				"Corroded Conduit": "room1"
 				}
@@ -41,9 +41,9 @@
 			"long_description": "The Cargo Hold, a sprawling repository of mystery, \nunfolds like a forgotten vault of the sea's treasures. \nWooden crates, adorned with barnacles and seaweed, stand as silent sentinels \nguarding the secrets of their contents. Some crates, cracked open by \nthe relentless pressure of the ocean, unveil mysterious artifacts \nand relics frozen in time. As players traverse the dimly lit space, \npuddles from dripping water create a haunting symphony, each droplet echoing the \ntales of forgotten cargo now longing to be rediscovered. \nTo the north, an Enigmatic Passage beckons, \nits concealed pathways leading to uncharted territories. \nTo the south, a Forgotten Depths awaits, promising a descent into the abyss where the \nsecrets of the ship's enigmatic narrative continue to unfold.\n",
 			"exits": {
 				"north": "room7",
-				"Enigmatic Passage": "room7",
+				"enigmatic passage": "room7",
 				"south": "room1",
-				"Forgotten Depths": "room1"
+				"forgotten depths": "room1"
 				}
         	},
         "room5": {
@@ -51,9 +51,9 @@
             "short_description": "You're in the navigator's room. Navigational instruments \nand torn maps litter this room. The remnants of a shattered compass are scattered across\n a worn-out table. A cracked astrolabe hangs on the wall. \nThe eerie glow from a bioluminescent fish outside the shattered \nwindow provides the only source of light. To the north, \nascend the Celestial Staircase, marked with constellations, \nleading to the mysteries beyond. To the south, a Ghostly Passage unfolds, \nits haunted whispers guiding players through the spectral\n corridors of the ship.\n",
             "long_description": "The Navigator's Room, a sanctuary of nautical wisdom, unveils \na tableau of celestial exploration and intricate navigation. \nNautical instruments, a shattered compass, and an astrolabe bear \nwitness to the meticulous efforts of seafarers. \nTorn maps, like fragmented memories, scatter across a table, waiting to be \npieced together. A subtle glow from a bioluminescent \nfish outside the shattered window provides the only source of illumination. \nTo the north, ascend the Celestial Staircase, marked with \nconstellations, leading to the mysteries beyond. \nTo the south, a Ghostly Passage unfolds, its haunted whispers guiding players \nthrough the spectral corridors of the ship.\n",			"exits": {
 				"north": "room8",
-				"Celestial Staircase": "room8",
+				"celestial staircase": "room8",
 				"south": "room2",
-				"Ghostly Passage": "room2"
+				"ghostly passage": "room2"
 				}
         	},
         "room6": {
@@ -61,9 +61,9 @@
             "short_description": "You're in the crew quarters. The crew quarters are cramped \nand claustrophobic. Bunk beds, now askew, line the walls. \nPersonal belongings are scattered about the damp floor, \nincluding old sailor uniforms and tattered letters. \nThe room feels haunted, as if the memories of the long-gone \ncrew still linger. Spectral Hall awaits in the north \nand Oceanic Passage in the south. The decision is on you.\n",
             "long_description": "Entering the Crew Quarters is a journey into the intimate spaces \nof those who once called this vessel home. \nCramped bunk beds, now slightly askew, bear the weight \nof tattered beddings and forgotten dreams. Personal belongings, \nscattered like the remnants of a shipwreck, include sailor uniforms, \nletters, and mementos. The room seems haunted, as if the spirits \nof the long-lost crew linger among the memories imprinted in the \nworn-out walls. Amidst the echoes of laughter and camaraderie, players sift through the \nartifacts of the past to unveil the stories hidden within. To the north, a Spectral Hall awaits, \nits haunted whispers guiding players through the ghostly corridors of the ship. \nTo the south, players step into the Oceanic Passage, the mysteries of the ship's enigmatic \njourney unfolding through the dimly lit abyss.\n",			"exits": {
 				"north": "room8",
-				"Spectral Hall": "room8",
+				"spectral hall": "room8",
 				"south": "room3",
-				"Oceanic Passage": "room3"
+				"oceanic passage": "room3"
 				}
         	},
         "room7": {
@@ -71,9 +71,9 @@
             "short_description": "You're at the observation deck. \nAscending to the highest point of the ship, you find the observation deck. \nBroken railings and shattered glass reveal the devastating force of the ship's descent. \nDespite the damage, the panoramic view of the murky underwater world is captivating. \nA school of ghostly fish swims by, casting fleeting shadows. \nTo the north, players traverse through the Murmuring Corridor or to the south, the Abyssal Gateway.\n",
             "long_description": "Ascending to the Observation Deck \nfeels like emerging into the realm between worlds, where the ship's past and \nthe ocean's depths converge. Broken railings and shattered glass frame a panoramic view of the mysterious underwater world. \nThe subtle glow of bioluminescent organisms casts an ethereal light on the ship's remnants. \nA school of ghostly fish, weaving through the skeletal structures of the ship, \nenhances the surreal ambiance. Here, on the precipice between two realms, \nplayers witness the beauty and tragedy of a vessel forever suspended \nin the abyss. To the north, players traverse through the Murmuring Corridor, its dimly lit passageway \nechoing with the secrets of the ship's enigmatic journey. \nTo the south, the Abyssal Gateway unfolds, inviting players to explore \nthe mysteries hidden within the dimly lit depths of the ship.\n",			"exits": {
 				"north": "room8",
-				"Murmuring Corridor": "room8",
+				"murmuring corridor": "room8",
 				"south": "room4",
-				"Abyssal Gateway": "room4"
+				"abyssal gateway": "room4"
 				}
         	},
         "room8": {
@@ -82,13 +82,13 @@
             "long_description": "The Infirmary, a sanctuary of healing now frozen in time, \nwhispers tales of past ailments and the desperate search for remedy. \nRusty medical equipment, damp bandages, and waterlogged medical charts bear \nwitness to the challenges faced by the ship's crew. Flickering lights create a somber atmosphere, \nrevealing the remnants of a once-functioning haven for the ailing. \nPlayers navigate the dimly lit space, perhaps discovering that the cure for their escape lies within \nthe echoes of ailments long gone. To the north, an Echoing Corridor beckons, its dimly lit passageway \nrevealing secrets yet to be unveiled. To the west, players step into the Murmuring Hallway, \nwhere the echoes of the ship's enigmatic journey resonate through the dimly lit abyss. \nTo the east, a Dim-lit Junction awaits, offering choices that \nlead to the next mysteries. To the south, enter the Silent Sanctuary, where the shadows whisper tales of healing long forgotten.\n",
 			"exits": {
 				"north": "room9",
-				"Echoing Corridor": "room9",
+				"echoing corridor": "room9",
 				"west": "room5",
-				"Murmuring Hallway": "room5",
+				"murmuring hallway": "room5",
 				"east": "room7",
-				"Dim-lit Junction": "room7",
+				"dim-lit junction": "room7",
 				"south": "room6",
-				"Silent Sanctuary": "room6"
+				"silent sanctuary": "room6"
 				}
         	},
         "room9": {
@@ -97,9 +97,9 @@
             "long_description": "The Communications Room, a silent witness to \nthe ship's last attempts to reach out to the world, echoes with \nthe ghostly hum of malfunctioning radio equipment. \nOld transmitters, scattered across the room like relics of a bygone era, \nawait the deft touch of a restorer. Encoded messages, \nhidden within the static-filled airwaves, hint at the urgency of past communications. \nAs players sift through the remnants of a failed connection, \nthey uncover the fragments of voices desperate to break through the walls \nof silence. To the north, a Static Gateway beckons, its dark hallway \nbathed in the static hum of malfunctioning radio waves, revealing \nsecrets yet to be deciphered. To the south, players step into the \nSilent Pathway, where the mysteries of the ship's enigmatic journey unfold through the dimly lit abyss.\n",
 			"exits": {
 				"north": "room10",
-				"Static Gateway": "room10",
+				"static gateway": "room10",
 				"south": "room8",
-				"Silent Pathway": "room8"
+				"silent pathway": "room8"
 				}
         	},
         "room10": {
@@ -107,7 +107,7 @@
 			"short_description": "You made it to the treasure room. \nDeep within the bowels of the ship, you stumble upon a hidden \nchamber filled with the ship's precious cargo. Mysterious artifacts, \nchests of gold and silver, and ancient relics are strewn about. \nThe room is dimly lit by the soft glow of luminescent algae clinging to \nthe treasures, creating an otherworldly spectacle in the sunken darkness. \nYou may go to the south from here, the Dank Portal but you can also escape!!\n",
 			"long_description": "Deep within the bowels of the ship lies the Treasure Room, \na clandestine chamber filled with the remnants of wealth and glory. \nAncient relics, chests of gold and silver, and precious jewels stand as silent witnesses to the ship's \nformer majesty. Luminescent algae, clinging to the treasures like a guardian's embrace, \nbathes the room in a mystical glow. As players navigate this final sanctuary, they unravel \nthe final mysteries of the ship, perhaps realizing that true treasure lies not in gold, but in the stories \nwoven into the fabric of the sunken vessel. To the south, a Dank Portal beckons, \nits entrance shrouded in mystery, leading players to the next phase of their enigmatic journey.\n",			"exits": {
 				"south": "room9",
-				"Dank Portal": "room8"
+				"dank portal": "room8"
 				}
 		}
     },
