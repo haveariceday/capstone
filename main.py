@@ -158,6 +158,11 @@ class Gameplay:
         print("Exiting the game. Goodbye!")
         exit()
 
+    def game_over(self):
+        print(f"{self.name}, you ran out of oxygen... sorry to let you go!")
+        print("Do it better next time. Goodbye!")
+        exit()
+
     def display_help(self):
         print("Available Commands")
         for key in self.help_data:
@@ -257,6 +262,8 @@ class Gameplay:
             self.look()
         while True:
             exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
+            if self.oxygen == 0:
+                self.game_over()
             user_input = input(
                 f"{self.name}, you are in {self.current_room}. Oxygen: {self.oxygen}%\n{self.rooms_data.get(self.current_room, {}).get('summary')}\nEnter a command (or 'quit' to "
                 f"exit): ")
