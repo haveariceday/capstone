@@ -287,14 +287,14 @@ class Gameplay:
                 elif command in ['take', 'pickup', 'grab', 'collect']:
                     item_name = args
                     self.take(item_name)
-                elif command in ['drop', 'leave', 'discard', 'put'] and len(args) == 1:
-                    item_name = args[0]
+                elif command in ['drop', 'leave', 'discard', 'put']:
+                    item_name = args
                     self.drop(item_name)
-                elif command == 'eat' and len(args) == 1:
-                    item_name = args[0]
+                elif command == 'eat':
+                    item_name = args
                     self.eat(item_name)
-                elif command == 'read' and len(args) == 1:
-                    item_name = args[0]
+                elif command == 'read':
+                    item_name = args
                     self.read(item_name)
                 elif command == 'inventory':
                     if self.inventory:

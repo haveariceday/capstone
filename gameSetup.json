@@ -12,7 +12,7 @@
 				"east": "room4",
 				"celestial staircase": "room4"
 				},
-			"summary": "Objects:apple, key log Features:grand desk, faded portrait, pprthole"
+			"summary": "Objects:apple, key, log Features:grand desk, faded portrait, porthole"
         	},
         "room2": {
 			"entered_already": "False",
