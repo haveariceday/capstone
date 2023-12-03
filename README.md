@@ -26,12 +26,15 @@ The details will be the following
 This is a single user Escape Room themed text-based adventure game. To play this game, the user can simply download the xxx.py file and run the program. There will be 10 rooms to escape from! Escape before you run out of oxygen!
 
 #### General rules:
-You can go to any room, however, every move decreases your oxygen. To gain oxygen, you have to take the required items from the room and play mini games. Enjoy
+You can go to any room, however, every move decreases your oxygen. To gain oxygen, you have to take the required items from the room and play mini-games. Enjoy
 1. Type the exact words written on the screen to proceed the game.
 2. Check available commands by typing "help"
 3. Type "quit" to end the game.
 4. Type "savegave" to save the current status of the game.
 6. To maneuver to different rooms, the user can move use words like "go" "jump" "move" with the direction or the name of the door.
+
+
+Biggest hint: inspect as much as you can and take everything with you!
 
 
 
