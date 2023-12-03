@@ -257,9 +257,8 @@ class Gameplay:
             self.look()
         while True:
             exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
-            print(self.rooms_data.get(self.current_room, {}).get('summary'))
             user_input = input(
-                f"{self.name}, you are in {self.current_room}. Oxygen: {self.oxygen}%\nEnter a command (or 'quit' to "
+                f"{self.name}, you are in {self.current_room}. Oxygen: {self.oxygen}%\n{self.rooms_data.get(self.current_room, {}).get('summary')}\nEnter a command (or 'quit' to "
                 f"exit): ")
             if user_input == 'quit':
                 self.quit_game()
