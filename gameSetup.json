@@ -12,6 +12,7 @@
 				"east": "room4",
 				"celestial staircase": "room4"
 				},
+			"lock": "locked",
 			"summary": "Objects:apple, key, log Features:grand desk, faded portrait, porthole"
         	},
         "room2": {
@@ -24,6 +25,7 @@
 				"south":   "room1",
 				"seaweed veiled passage":"room1"
 				},
+			"lock": "locked",
 			"summary": "Objects:ladle, diary Features:dining table, pots,trapdoor"
         	},
         "room3": {
@@ -36,6 +38,7 @@
 				"south": "room1",
 				"Corroded Conduit": "room1"
 				},
+			"lock": "locked",
 			"summary": "Objects:wrench, blueprint Features: waterwheel, machinery, console"
         	},
         "room4": {
@@ -48,6 +51,7 @@
 				"south": "room1",
 				"forgotten depths": "room1"
 				},
+			"lock": "locked",
 			"summary": "Objects: crate, helmet Features:crates, seaweed, dim light "
         	},
         "room5": {
@@ -59,6 +63,7 @@
 				"south": "room2",
 				"ghostly passage": "room2"
 				},
+			"lock": "locked",
 			"summary": "Objects:needle, chart Features:nautical instruments, maps,compass"
         	},
         "room6": {
@@ -70,6 +75,7 @@
 				"south": "room3",
 				"oceanic passage": "room3"
 				},
+			"lock": "locked",
 			"summary": "Objects:page, photo Features:beds, personal belongings,diary drawer"
         	},
         "room7": {
@@ -81,6 +87,7 @@
 				"south": "room4",
 				"abyssal gateway": "room4"
 				},
+			"lock": "locked",
 			"summary": "Objects:binocular,algae Features:railings, glass, view"
         	},
         "room8": {
@@ -97,6 +104,7 @@
 				"south": "room6",
 				"silent sanctuary": "room6"
 				},
+			"lock": "locked",
 			"summary": "Objects:firstaid,note Features:medic, bandages, flickering lights"
         	},
         "room9": {
@@ -109,6 +117,7 @@
 				"south": "room8",
 				"silent pathway": "room8"
 				},
+			"lock": "locked",
 			"summary": "Objects:radio, message Features:radio equipment, messages, radio"
         	},
         "room10": {
@@ -119,6 +128,7 @@
 				"south": "room9",
 				"dank portal": "room8"
 				},
+			"lock": "locked",
 			"summary": "Objects:relic, crown Features:artifact,algae, hidden mechanism"
 		}
     },
