@@ -94,9 +94,12 @@ class Gameplay:
                 for item in required_items:
                     if item not in self.inventory:
                         self.parse_user_input(True)
+                    else:
+                        self.inventory.remove(item)
                 answer = input(f"play {game}(yes/no)?")
                 if answer == 'yes':
                     self.play(game)
+
 
     def drop(self, item_name):
         if item_name in self.inventory:
@@ -118,9 +121,9 @@ class Gameplay:
                 else:
                     print(f"{self.name}, you already have the {item_name} in your inventory.")
             else:
-                print(f"{self.name}, there is no {item_name} in the current room.")
+                print(f"{self.name}, that cannot be taken. \nObjects can be taken and Features can be inspected.")
         else:
-            print(f"{self.name}, there is no {item_name} in the game.")
+            print(f"{self.name}, that cannot be taken. \nObjects can be taken and Features can be inspected.")
 
     def eat(self, item_name):
         if item_name in self.inventory and self.objects_data.get(item_name).get('edible') == "yes":
@@ -138,6 +141,12 @@ class Gameplay:
             print(hint)
         else:
             print(f"{item_name} cannot be read...")
+    def wear(self, item_name):
+        if self.objects_data.get(item_name).get('wearable') == "yes":
+            print("Congratulations! You won the game!")
+            exit()
+        else:
+            print(f"{item_name} cannot be worn...")
     def display_inventory(self):
         print(f"{self.name}'s Inventory: {', '.join(self.inventory)}")
 
@@ -183,6 +192,8 @@ class Gameplay:
 
         def evaluate_guess(hidden_word, guess):
             if guess == hidden_word:
+                print("Correct! Your oxygen level increases by 10.")
+                self.oxygen += 10
                 return "You guessed the word! Congratulations!"
             feedback = []
             for i in range(5):
@@ -192,7 +203,8 @@ class Gameplay:
                     feedback.append("O")
                 else:
                     feedback.append(".")
-
+            print(f"Try again. You lost oxygen by 2.")
+            self.oxygen -= 2
             return " ".join(feedback)
 
         if game == "air_tank_riddle":
@@ -207,11 +219,11 @@ class Gameplay:
 
             # Check if the answer is correct
             if user_answer.lower() == selected_riddle["answer"].lower():
-                print("Correct! Your oxygen level increases by 5.")
-                #player["oxygen_level"] += 5
+                print("Correct! Your oxygen level increases by 10.")
+                self.oxygen += 10
             else:
-                print("Incorrect. Your oxygen level decreases by 2.")
-                #player["oxygen_level"] -= 2
+                print("Incorrect. Your oxygen level decreases by 5.")
+                self.oxygen -= 5
 
 
         elif game == "scramble_word":
@@ -227,9 +239,11 @@ class Gameplay:
             player_guess = input("Your guess: ")
 
             if player_guess.upper() == original_word:
-                print("Correct! You unscrambled the word.")
+                print("Correct! You unscrambled the word. Your oxygen level increases by 10.")
+                self.oxygen += 10
             else:
-                print("Incorrect. Try again.")
+                print("Incorrect. Your oxygen level decreases by 5. Try again")
+                self.oxygen -= 5
 
         elif game == "wordle":
             hidden_word = choose_random_word()
@@ -284,13 +298,15 @@ class Gameplay:
                         del args[0]
 
                 args = " ".join(args)
+                self.oxygen -= 5
+                print("Every move means you lose 5% oxygen...")
                 if command in ['go', 'move', 'jump']:
                     self.go(args)
                 elif command in ['lookat', 'inspect']:
-                    self.look_at(" ".join(args))
+                    self.look_at(args)
                 elif command == 'look':
                     self.look()
-                elif command in ['take', 'pickup', 'grab', 'collect']:
+                elif command in ['get','take', 'pickup', 'grab', 'collect']:
                     item_name = args
                     self.take(item_name)
                 elif command in ['drop', 'leave', 'discard', 'put']:
@@ -302,6 +318,9 @@ class Gameplay:
                 elif command == 'read':
                     item_name = args
                     self.read(item_name)
+                elif command == 'wearable':
+                    item_name = args
+                    self.wear(item_name)
                 elif command == 'inventory':
                     if self.inventory:
                         self.display_inventory()

@@ -131,7 +131,7 @@
 		},
         "key": {
 			"name": "Navigation Key",
-			"description": "A unique key with a nautical design, possibly used to unlock a secret compartment.",
+			"description": "A unique key with a nautical design. \nThis key is required to play a game... take this and inspect features in the room",
 			"room": "room1"
 			},
         "log": {
@@ -150,17 +150,17 @@
 			"name": "Cook's Diary",
 			"description": "A diary detailing the last meals prepared on the ship, offering clues about hidden passages.Read inside.",
 			"readable": "yes",
-			"hint": "If you want to move forward.. take this diary with you and go to the trapdoor...",
+			"hint": "If you want to move forward.. take this diary with you and inspect trapdoor...",
 			"room": "room2"
 			},
 		"wrench": {
 			"name": "Corroded Wrench",
-			"description": "A heavy wrench that could be useful for loosening or breaking things.",
+			"description": "A heavy wrench is useful\nTake this with you to play a game... and inspect features in the room",
 			"room": "room3"
 			},
 		"blueprint": {
 			"name": "Damaged Blueprint",
-			"description": "A partially damaged blueprint of the ship's engine. It looks like you must turn the waterwheel to go forward.",
+			"description": "A partially damaged blueprint of the ship's engine. \nIt looks like you must take this with you and check the waterwheel to go forward.",
 			"room": "room3"
 			},
 		"crate": {
@@ -175,7 +175,7 @@
 			},
 		"needle": {
 			"name": "Shattered Compass Needle",
-			"description": "A piece of the ship's compass that, when combined with other parts, could become a functional tool.",
+			"description": "A piece of the ship's compass. Take this with you to play a game with maps",
 			"room": "room5"
 			},
 		"chart": {
@@ -203,7 +203,7 @@
 			},
 		"binocular": {
 			"name": "Binocular",
-			"description": "Functional binocular that helps players spot distant clues.",
+			"description": "Functional binocular that helps players spot distant clues.\nIt will be helpful to take this with you and check the view.",
 			"room": "room7"
 			},
 		"firstaid": {
@@ -238,7 +238,8 @@
 		"crown": {
 			"name": "Jeweled Crown",
 			"description": "A regal crown adorned with precious gems, possibly used for unlocking a secret compartment or passage.",
-			"room": "room10"
+			"room": "room10",
+			"wearable": "yes"
 			}
     },
 	"Features": {
@@ -413,7 +414,7 @@
 	},
 
     "Verbs": {
-        "valid_commands": ["leave","discard","collect","inspect","go", "look", "take", "grab", "pickup", "drop", "eat", "inventory","savegame","loadgame", "quit", "help", "lookat", "hide", "put", "jump", "unlock", "search", "open", "close", "read", "move","listen" ]
+        "valid_commands": ["wear","get","leave","discard","collect","inspect","go", "look", "take", "grab", "pickup", "drop", "eat", "inventory","savegame","loadgame", "quit", "help", "lookat", "hide", "put", "jump", "unlock", "search", "open", "close", "read", "move","listen" ]
     },
 	"Words": ["chest", "skull", "sword", "storm"],
 	"Riddles": {
