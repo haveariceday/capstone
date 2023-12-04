@@ -58,8 +58,9 @@ class Gameplay:
         # described
         #
         exits = list(self.rooms_data.get(self.current_room, {}).get('exits', {}).keys())
-
-        if direction in exits:
+        if self.rooms_data.get(self.current_room, {}).get('lock', {}) == "locked":
+            print("The passage is locked. Please play a game to unlock the exit.")
+        elif direction in exits and self.rooms_data.get(self.current_room, {}).get('lock', {}) == "unlocked":
             new_room = self.rooms_data.get(self.current_room, {}).get('exits', {}).get(direction)
             print(f"{self.name} is moving {direction} to {new_room}.")
             self.current_room = new_room
@@ -194,6 +195,7 @@ class Gameplay:
             if guess == hidden_word:
                 print("Correct! Your oxygen level increases by 10.")
                 self.oxygen += 10
+                self.rooms_data[self.current_room]['lock'] = "unlocked"
                 return "You guessed the word! Congratulations!"
             feedback = []
             for i in range(5):
@@ -220,6 +222,7 @@ class Gameplay:
             # Check if the answer is correct
             if user_answer.lower() == selected_riddle["answer"].lower():
                 print("Correct! Your oxygen level increases by 10.")
+                self.rooms_data[self.current_room]['lock'] = "unlocked"
                 self.oxygen += 10
             else:
                 print("Incorrect. Your oxygen level decreases by 5.")
@@ -240,6 +243,7 @@ class Gameplay:
 
             if player_guess.upper() == original_word:
                 print("Correct! You unscrambled the word. Your oxygen level increases by 10.")
+                self.rooms_data[self.current_room]['lock'] = "unlocked"
                 self.oxygen += 10
             else:
                 print("Incorrect. Your oxygen level decreases by 5. Try again")
