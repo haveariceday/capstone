@@ -460,23 +460,18 @@
 				"abyss": "refers to a deep and seemingly bottomless chasm or hole,\n often used metaphorically to describe a profound or infinite depth."
 	},
 	"Help": {
-		"go": "1. go/jump/move [direction/passage name] - Use this command to maneuver.",
+		"go": "1. go/jump/move/unlock [direction/passage name] - Use this command to maneuver.",
 		"look": "2. look - Current room description will be displayed.",
 		"take": "3. take/grab/pickup [object name] - User can take the object and store it into their inventory.",
 		"drop":  "4. drop/put [object name] - User can leave the object in the room.",
 		"lookat": "5. lookat/inspect [object/feature name] - Object or feature description will be displayed.",
 		"eat":  "6. eat [object name] - User can eat the object.",
-		"open": "7. open/unlock [feature name] - User can open a feature.",
-		"close": "8. close [feature name] - User can close a feature.",
-		"hide": "9. ",
-		"search": "10. ",
-		"listen": "11. ",
-		"read": "12. read [object name] - User can read the readable object.",
-		"inventory": "13. inventory - It shows user's inventory.",
-		"save game": "14. save game - User can save game status and inventory.",
-		"load game": "15. load game - User can load game.",
-		"quit": "16. quit - Exit out of the game.",
-		"help": "17. help - It shows this help guide."
+		"read": "7. read [object name] - User can read the readable object.",
+		"inventory": "8. inventory - It shows user's inventory.",
+		"save game": "9. save game - User can save game status and inventory.",
+		"load game": "10. load game - User can load game.",
+		"quit": "11. quit - Exit out of the game.",
+		"help": "12. help - It shows this help guide."
 	}
 
 }

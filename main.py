@@ -231,7 +231,6 @@ class Gameplay:
 
         elif game == "scramble_word":
             original_word = random.choice(load_data('Words')).upper()
-            print(original_word)
             scrambled_word = list(original_word)
             random.shuffle(scrambled_word)
             scrambled = ''.join(scrambled_word)
@@ -304,7 +303,7 @@ class Gameplay:
                 args = " ".join(args)
                 self.oxygen -= 5
                 print("Every move means you lose 5% oxygen...")
-                if command in ['go', 'move', 'jump']:
+                if command in ['go', 'move', 'jump','unlock','open']:
                     self.go(args)
                 elif command in ['lookat', 'inspect']:
                     self.look_at(args)
@@ -322,7 +321,7 @@ class Gameplay:
                 elif command == 'read':
                     item_name = args
                     self.read(item_name)
-                elif command == 'wearable':
+                elif command == 'wear':
                     item_name = args
                     self.wear(item_name)
                 elif command == 'inventory':
