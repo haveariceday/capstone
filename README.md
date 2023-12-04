@@ -23,7 +23,8 @@ The details will be the following
                     ~~~~~      ~~~~~~~~~~                  
                 ~~~~~~~     ~~~~~     ~~~~~~~~~~~~    
 
-This is a single user Escape Room themed text-based adventure game. To play this game, the user can simply download the main.py and gameSetfile and run the program. There will be 10 rooms to escape from! Escape before you run out of oxygen!
+This is a single user Escape Room themed text-based adventure game. To play this game, the user can simply download the 
+main.py and gameSetfile and run the program. There will be 10 rooms to escape from! Escape before you run out of oxygen!
 
 #### General rules:
 To win the game, you have to wear the crown in room10. However, every room is locked unless you win a mini game. Enjoy
@@ -45,7 +46,8 @@ How to win the game - type below
 5. inspect faded portrait
 6. yes to play the game
 7. the answer will be one of these for wordle ["chest", "skull", "sword", "storm", "ocean", "abyss"]
-8. go north (or "north" or "move to north" or "jump forgotten corridor"). From room 1, it will have access to three rooms but I am giving you the fastest way to win.
+8. go north (or "north" or "move to north" or "jump forgotten corridor"). From room 1, it will have access to three rooms 
+but I am giving you the fastest way to win.
 9. You are in room3 now. Type "take blueprint"
 10. take wrench
 11. inspect waterwheel

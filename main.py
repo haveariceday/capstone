@@ -28,29 +28,35 @@ class Gameplay:
         self.wordle_hint_data = load_data('Wordle_hint')
         self.help_data = load_data('Help')
 
-    # def load_game_state(self, filename='saved_game.json'):
-    #     if os.path.exists(filename):
-    #         choice = input("Do you want to load a saved game? (yes/no): ").lower()
-    #
-    #         if choice == 'yes':
-    #             with open(filename, 'r') as file:
-    #                 game_state = json.load(file)
-    #
-    #             self.name = game_state.get('name', '')
-    #             self.current_room = game_state.get('current_room', 'room1')
-    #             self.oxygen = game_state.get('oxygen', 100)
-    #             self.inventory = game_state.get('inventory', [])
-    #             self.rooms_data = game_state.get('inventory', [])
-    #             self.objects_data = game_state.get('inventory', [])
-    #             self.verbs_data = game_state.get('inventory', [])
-    #
-    #             print(f"Welcome back, {self.name}!")
-    #             return True
-    #         else:
-    #             print("Starting a new game.")
-    #             return False
-    #     else:
-    #         return False
+    def load_game_state(self, filename='saved_game.json'):
+        if os.path.exists(filename):
+            choice = input("Do you want to load the saved game? (yes/no): ").lower()
+
+            if choice == 'yes':
+                with open(filename, 'r') as file:
+                    game_state = json.load(file)
+
+                self.name = game_state.get('name', '')
+                self.current_room = game_state.get('current_room', 'room1')
+                self.oxygen = game_state.get('oxygen', 100)
+                self.inventory = game_state.get('inventory', [])
+                self.rooms_data = load_data('Rooms')
+                self.objects_data = load_data('Objects')
+                self.verbs_data = load_data('Verbs')
+                self.features_data = load_data('Features')
+                self.words_data = load_data('Words')
+                self.riddles_data = load_data('Riddles')
+                self.wordle_data = load_data('Wordle_words')
+                self.wordle_hint_data = load_data('Wordle_hint')
+                self.help_data = load_data('Help')
+
+                print(f"Welcome back, {self.name}!")
+                return True
+            else:
+                print("Starting a new game.")
+                return False
+        else:
+            return False
 
 
     def go(self, direction):
@@ -273,7 +279,8 @@ class Gameplay:
         valid_commands = load_data('Verbs').get('valid_commands', [])
         objects = list(load_data('Objects').keys())
         features = list(load_data('Features').keys())
-        # if not self.load_game_state():
+        if not self.load_game_state():
+            pass
         # self.get_player_name()
         if not sameRoom:
             self.look()
@@ -329,13 +336,12 @@ class Gameplay:
                         self.display_inventory()
                     else:
                         print(f"{self.name}'s inventory is empty")
-                elif command == 'savegame':
+                elif command == 'save':
                     self.save_game()
-                elif command == 'loadgame':
+                elif command == 'load':
                     self.load_game_state()
                 elif command == 'help':
                     self.display_help()
-                #Add more commands as needed
                 else:
                     print("Error: Invalid command format.")
             else:
@@ -345,4 +351,3 @@ class Gameplay:
 # Example usage:
 game = Gameplay()
 game.parse_user_input()
-#game.play("wordle")
